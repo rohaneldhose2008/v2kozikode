@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery – Brown Lights Media Kozhikode</title>
+    <meta name="description" content="Explore our Kozhikode wedding albums, pre-wedding stories, and ritual highlights.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Great+Vibes&family=Noto+Serif+Display:ital,wght@0,300;0,400;0,600;1,300&family=Poppins:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+
+    <header class="site-header scrolled">
+        <div class="header-container">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/images/logo.png" alt="Brown Lights Media Logo" class="logo-img-big">
+                <span class="logo-text">BROWN LIGHTS MEDIA</span>
+            </a>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#packages" class="nav-link">Packages</a></li>
+                    <li><a href="index.html#films" class="nav-link">Films</a></li>
+                    <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="gallery-page-hero text-center">
+        <div class="container">
+            <span class="section-tag-gold">COLLECTIONS & ALBUMS</span>
+            <h1 class="gallery-page-title">Brown Lights Media Gallery</h1>
+            <p class="gallery-page-desc">Send us your gallery folders and images to populate your custom Kozhikode collections here!</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery Grid -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-tabs">
+                <button class="gallery-tab active" data-filter="all">All Stories</button>
+                <button class="gallery-tab" data-filter="weddings">Weddings</button>
+                <button class="gallery-tab" data-filter="prewedding">Pre-Wedding</button>
+                <button class="gallery-tab" data-filter="rituals">Rituals & Haldi</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item weddings" data-full="assets/images/STRIPEGALLERY/001.JPG">
+                    <img src="assets/images/STRIPEGALLERY/001.JPG" alt="Collection 1">
+                    <div class="portfolio-overlay"><span>View Story</span></div>
+                </div>
+                <div class="portfolio-item prewedding" data-full="assets/images/STRIPEGALLERY/18.JPEG">
+                    <img src="assets/images/STRIPEGALLERY/18.JPEG" alt="Collection 2">
+                    <div class="portfolio-overlay"><span>View Story</span></div>
+                </div>
+                <div class="portfolio-item rituals" data-full="assets/images/STRIPEGALLERY/DSC01941.jpg">
+                    <img src="assets/images/STRIPEGALLERY/DSC01941.jpg" alt="Collection 3">
+                    <div class="portfolio-overlay"><span>View Story</span></div>
+                </div>
+                <div class="portfolio-item weddings" data-full="assets/images/STRIPEGALLERY/DSC03049.JPG">
+                    <img src="assets/images/STRIPEGALLERY/DSC03049.JPG" alt="Collection 4">
+                    <div class="portfolio-overlay"><span>View Story</span></div>
+                </div>
+                <div class="portfolio-item prewedding" data-full="assets/images/STRIPEGALLERY/DSC05171.JPG">
+                    <img src="assets/images/STRIPEGALLERY/DSC05171.JPG" alt="Collection 5">
+                    <div class="portfolio-overlay"><span>View Story</span></div>
+                </div>
+                <div class="portfolio-item rituals" data-full="assets/images/STRIPEGALLERY/IMG_6953 2.JPG">
+                    <img src="assets/images/STRIPEGALLERY/IMG_6953 2.JPG" alt="Collection 6">
+                    <div class="portfolio-overlay"><span>View Story</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 BROWN LIGHTS MEDIA KOZHIKODE. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightbox-modal">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">&times;</button>
+        <img src="" alt="Enlarged photo" class="lightbox-img" id="lightbox-img">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
