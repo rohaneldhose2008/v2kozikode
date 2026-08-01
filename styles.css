@@ -705,47 +705,47 @@ button {
 }
 
 /* ==========================================================================
-   INSTAGRAM MASONRY GALLERY PAGE STYLES
+   INSTAGRAM MASONRY GALLERY PAGE STYLES - SMALL COMPACT GRID
    ========================================================================== */
 .gallery-page-hero {
-    padding: 10rem 0 4rem 0;
+    padding: 3.5rem 0 2.5rem 0;
     background-color: var(--bg-light);
     border-bottom: 1px solid var(--border-light);
 }
 
 .gallery-page-title {
     font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
     font-weight: 400;
     color: var(--text-primary);
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.5rem;
 }
 
 .gallery-page-desc {
     color: var(--text-secondary);
-    font-size: 1rem;
+    font-size: 0.92rem;
     max-width: 600px;
     margin: 0 auto;
 }
 
 .gallery-section {
-    padding: 4rem 0 8rem 0;
+    padding: 3rem 0 6rem 0;
     background-color: var(--bg-white);
 }
 
 .gallery-tabs {
     display: flex;
     justify-content: center;
-    gap: 0.75rem;
+    gap: 0.6rem;
     flex-wrap: wrap;
-    margin-bottom: 3.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .gallery-tab {
-    padding: 0.6rem 1.5rem;
-    font-size: 0.82rem;
-    letter-spacing: 0.1em;
+    padding: 0.45rem 1.2rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
     font-weight: 500;
     border: 1px solid var(--border-light);
     border-radius: 30px;
@@ -761,26 +761,26 @@ button {
     border-color: var(--accent-gold);
 }
 
-/* Instagram Masonry Grid - Preserves Natural Aspect Ratio (Portrait stays Portrait, Landscape stays Landscape) */
+/* Small Compact Instagram Masonry Grid (5 Columns on Desktop) */
 .insta-masonry-grid {
-    column-count: 3;
-    column-gap: 1.25rem;
+    column-count: 5; /* Small compact multi-column grid */
+    column-gap: 0.6rem;
     width: 100%;
 }
 
 .masonry-item {
     break-inside: avoid;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.6rem;
     cursor: pointer;
-    border-radius: 6px;
+    border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     transition: var(--transition-smooth);
 }
 
 .masonry-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
 .masonry-img-wrapper {
@@ -791,13 +791,13 @@ button {
 
 .masonry-img-wrapper img {
     width: 100%;
-    height: auto; /* Natural Aspect Ratio */
+    height: auto; /* Natural Aspect Ratio for Portrait & Landscape */
     display: block;
     transition: transform 0.4s ease;
 }
 
 .masonry-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.06);
 }
 
 .masonry-overlay {
@@ -809,7 +809,7 @@ button {
     background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 60%);
     opacity: 0;
     transition: opacity 0.3s ease;
-    padding: 1.25rem;
+    padding: 0.75rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -821,13 +821,13 @@ button {
 }
 
 .masonry-tag {
-    font-size: 0.8rem;
+    font-size: 0.72rem;
     font-weight: 500;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
 }
 
 .expand-icon {
-    font-size: 1rem;
+    font-size: 0.85rem;
     color: var(--accent-gold);
 }
 
@@ -1160,7 +1160,13 @@ button {
     transform: translateY(0);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
+    .insta-masonry-grid {
+        column-count: 4;
+    }
+}
+
+@media (max-width: 900px) {
     .gallery-grid-7col-touch {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -1186,7 +1192,7 @@ button {
     }
 
     .insta-masonry-grid {
-        column-count: 2;
+        column-count: 3;
     }
 }
 
@@ -1229,7 +1235,7 @@ button {
     }
 
     .insta-masonry-grid {
-        column-count: 1;
+        column-count: 2;
     }
 
     .form-row, .crew-details, .crew-grid-inline, .time-row {
