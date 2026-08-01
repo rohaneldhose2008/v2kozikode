@@ -44,23 +44,26 @@ const galleryPageHTML = `<!DOCTYPE html>
     <title>Gallery – Brown Lights Media Kozhikode</title>
     <meta name="description" content="Explore our complete Kozhikode luxury wedding photography collections and couple stories by Brown Lights Media.">
     
-    <!-- Custom Dyot Font & Google Fonts -->
+    <!-- Google Fonts: Bebas Neue (Subheadings) & Open Sans/Google Sans fallback -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Great+Vibes&family=Noto+Serif+Display:ital,wght@0,300;0,400;0,600;1,300&family=Poppins:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="white-theme">
 
+    <!-- Fixed Floating Logo Badge All Through Website -->
+    <a href="index.html" class="floating-brand-logo" title="Brown Lights Media Home">
+        <img src="assets/images/logo.png" alt="Brown Lights Media Logo" class="floating-logo-img">
+        <span class="floating-logo-text">BROWN LIGHTS MEDIA</span>
+    </a>
+
     <!-- Header Navigation (Subpage Header) -->
     <header class="site-header subpage-header">
         <div class="header-container">
-            <a href="index.html" class="brand-logo">
-                <img src="assets/images/logo.png" alt="Brown Lights Media Logo" class="logo-img-big">
-                <span class="logo-text">BROWN LIGHTS MEDIA</span>
-            </a>
+            <div class="brand-logo-spacer"></div>
             
             <nav class="main-nav">
                 <ul class="nav-list">
@@ -124,4 +127,4 @@ const galleryPageHTML = `<!DOCTYPE html>
 `;
 
 fs.writeFileSync(path.join(__dirname, 'gallery.html'), galleryPageHTML, 'utf8');
-console.log('Updated build_gallery.js with transparent PNG logo watermark overlay!');
+console.log('Updated build_gallery.js with floating logo and new Didot / Bebas Neue / Google Sans fonts!');

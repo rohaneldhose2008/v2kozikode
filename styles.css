@@ -1,17 +1,10 @@
 /* ==========================================================================
    BROWN LIGHTS MEDIA - Kozhikode Luxury Wedding Photography & Films
+   Typography: Didot Regular (Main Headings), Bebas Neue (Subheadings), Google Sans (Body)
    Theme: Crisp Clean White & Gold Aesthetic
    ========================================================================== */
 
-/* Font Declarations */
-@font-face {
-    font-family: 'Dyot';
-    src: local('Dyot'), url('https://fonts.cdnfonts.com/s/96347/Dyot.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* CSS Variables for White Theme */
+/* CSS Variables for White Theme & Typography */
 :root {
     --bg-white: #FFFFFF;
     --bg-light: #F7F7F7;
@@ -24,9 +17,12 @@
     --accent-gold: #C5A059;
     --accent-gold-hover: #b08d46;
     --border-light: #E2E2E2;
-    --font-heading: 'Dyot', 'Cinzel', 'Bodoni Moda', 'Noto Serif Display', Georgia, serif;
+
+    /* Requested Font Stack: Didot Regular, Bebas Neue, Google Sans */
+    --font-heading: 'Didot', 'Bodoni MT', 'Cinzel', serif;
+    --font-subheading: 'Bebas Neue', 'Cinzel', sans-serif;
+    --font-body: 'Open Sans', 'Google Sans', 'Product Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-handwriting: 'Great Vibes', cursive;
-    --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
     --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -80,6 +76,62 @@ button {
     text-align: center;
 }
 
+/* Headings Typography */
+h1, h2, .hero-title, .about-title, .packages-main-title, .showcase-title, .cta-title, .contact-title, .gallery-page-title {
+    font-family: var(--font-heading) !important;
+    font-weight: 400 !important;
+}
+
+h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge-tag-gold, .reel-tag, .info-label, .masonry-tag {
+    font-family: var(--font-subheading) !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.12em !important;
+}
+
+/* Floating Brand Logo All Through Website */
+.floating-brand-logo {
+    position: fixed;
+    top: 1.5rem;
+    left: 2rem;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    padding: 0.5rem 1.3rem 0.5rem 0.8rem;
+    border-radius: 40px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.14);
+    border: 1px solid rgba(226, 226, 226, 0.8);
+    transition: var(--transition-smooth);
+}
+
+.floating-brand-logo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+    background: #FFFFFF;
+}
+
+.floating-logo-img {
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(0.7) opacity(0.85);
+}
+
+.floating-logo-text {
+    font-family: var(--font-subheading);
+    font-size: 1.25rem;
+    letter-spacing: 0.18em;
+    color: #333333;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.brand-logo-spacer {
+    width: 260px;
+}
+
 /* Header & Navigation - NON-FLOATING */
 .site-header {
     position: absolute;
@@ -99,30 +151,6 @@ button {
     margin: 0 auto;
 }
 
-.brand-logo {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-/* Big Grey Logo */
-.logo-img-big {
-    height: 100px; /* BIGGER LOGO */
-    width: auto;
-    object-fit: contain;
-    filter: grayscale(100%) brightness(0.75) opacity(0.85); /* GREY COLOR */
-    transition: var(--transition-smooth);
-}
-
-.logo-text {
-    font-family: var(--font-heading);
-    font-size: 1.4rem;
-    font-weight: 600;
-    letter-spacing: 0.25em;
-    color: #888888; /* GREY COLOR */
-    text-transform: uppercase;
-}
-
 .main-nav .nav-list {
     display: flex;
     list-style: none;
@@ -130,6 +158,7 @@ button {
 }
 
 .nav-link {
+    font-family: var(--font-body);
     color: rgba(255, 255, 255, 0.9);
     font-size: 0.9rem;
     font-weight: 500;
@@ -231,7 +260,7 @@ button {
 }
 
 .hero-title {
-    font-family: var(--font-heading);
+    font-family: var(--font-heading) !important;
     font-size: clamp(2.5rem, 5.5vw, 4.8rem);
     font-weight: 400;
     line-height: 1.15;
@@ -287,9 +316,9 @@ button {
     filter: brightness(1.1);
 }
 
-/* Photo Hover Watermark PNG Overlay (BIGGER & GREY COLOR) */
+/* Photo Hover Watermark PNG Overlay */
 .overlay-logo-png {
-    width: 170px; /* BIGGER WATERMARK LOGO */
+    width: 170px;
     max-width: 85%;
     height: auto;
     object-fit: contain;
@@ -297,7 +326,7 @@ button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.95);
-    filter: grayscale(100%) brightness(0.65) opacity(0.85); /* GREY COLOR */
+    filter: grayscale(100%) brightness(0.65) opacity(0.85);
     pointer-events: none;
     transition: transform 0.4s ease, opacity 0.4s ease;
 }
@@ -337,9 +366,10 @@ button {
     padding: 0.9rem 2.5rem;
     background-color: var(--text-primary);
     color: var(--text-white);
-    font-size: 0.82rem;
-    letter-spacing: 0.2em;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
     font-weight: 600;
+    font-family: var(--font-subheading);
     text-transform: uppercase;
     border-radius: 2px;
     transition: var(--transition-smooth);
@@ -393,7 +423,7 @@ button {
 }
 
 .about-title {
-    font-family: var(--font-heading);
+    font-family: var(--font-heading) !important;
     font-size: clamp(2rem, 3.2vw, 3.4rem);
     font-weight: 400;
     line-height: 1.25;
@@ -404,9 +434,10 @@ button {
 }
 
 .about-description {
+    font-family: var(--font-body);
     font-size: 0.95rem;
     color: var(--text-secondary);
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.85;
     margin-bottom: 1.5rem;
 }
@@ -420,17 +451,18 @@ button {
 }
 
 .section-tag-gold {
-    font-size: 0.8rem;
+    font-family: var(--font-subheading) !important;
+    font-size: 1.1rem;
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--accent-gold);
-    font-weight: 600;
+    font-weight: 400;
     display: block;
     margin-bottom: 0.75rem;
 }
 
 .packages-main-title {
-    font-family: var(--font-heading);
+    font-family: var(--font-heading) !important;
     font-size: clamp(2.2rem, 3.8vw, 3.8rem);
     font-weight: 400;
     color: var(--text-primary);
@@ -438,11 +470,11 @@ button {
 }
 
 .packages-subtitle {
+    font-family: var(--font-body);
     max-width: 680px;
     margin: 0 auto 4rem auto;
     font-size: 0.95rem;
     color: var(--text-secondary);
-    font-weight: 300;
 }
 
 .packages-grid {
@@ -478,10 +510,11 @@ button {
 
 .badge-tag {
     display: inline-block;
-    font-size: 0.7rem;
+    font-family: var(--font-subheading) !important;
+    font-size: 0.9rem;
     letter-spacing: 0.15em;
-    font-weight: 600;
-    padding: 4px 12px;
+    font-weight: 400;
+    padding: 4px 14px;
     background: rgba(197, 160, 89, 0.15);
     color: var(--accent-gold);
     border-radius: 20px;
@@ -502,6 +535,7 @@ button {
 }
 
 .package-card-desc {
+    font-family: var(--font-body);
     font-size: 0.95rem;
     color: var(--text-secondary);
 }
@@ -511,8 +545,9 @@ button {
 }
 
 .package-section h4 {
-    font-size: 1.05rem;
-    font-weight: 600;
+    font-family: var(--font-subheading) !important;
+    font-size: 1.3rem;
+    font-weight: 400;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
@@ -531,7 +566,8 @@ button {
 }
 
 .crew-day h5 {
-    font-size: 0.85rem;
+    font-family: var(--font-subheading) !important;
+    font-size: 1.05rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-muted);
@@ -543,6 +579,7 @@ button {
 }
 
 .crew-day li, .deliverables-list li {
+    font-family: var(--font-body);
     font-size: 0.9rem;
     color: var(--text-secondary);
     margin-bottom: 0.5rem;
@@ -569,8 +606,8 @@ button {
 }
 
 .package-highlights-box h4 {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-family: var(--font-subheading) !important;
+    font-size: 1.3rem;
     margin-bottom: 1.25rem;
     color: var(--text-primary);
 }
@@ -580,6 +617,7 @@ button {
 }
 
 .package-highlights-box li {
+    font-family: var(--font-body);
     font-size: 0.95rem;
     color: var(--text-secondary);
     margin-bottom: 1rem;
@@ -596,10 +634,10 @@ button {
 .btn-package {
     width: 100%;
     padding: 1.1rem;
-    font-size: 0.85rem;
+    font-family: var(--font-subheading);
+    font-size: 1.1rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    font-weight: 600;
     border-radius: 4px;
     transition: var(--transition-smooth);
 }
@@ -632,7 +670,7 @@ button {
 }
 
 .showcase-title {
-    font-family: var(--font-heading);
+    font-family: var(--font-heading) !important;
     font-size: clamp(2rem, 3.5vw, 3.5rem);
     font-weight: 400;
     line-height: 1.2;
@@ -643,11 +681,11 @@ button {
 }
 
 .showcase-subtitle {
+    font-family: var(--font-body);
     max-width: 780px;
     margin: 0 auto 3.5rem auto;
     font-size: 0.92rem;
     color: var(--text-secondary);
-    font-weight: 300;
     line-height: 1.8;
 }
 
@@ -705,17 +743,16 @@ button {
 }
 
 .reel-tag {
-    font-size: 0.65rem;
+    font-family: var(--font-subheading) !important;
+    font-size: 0.9rem;
     letter-spacing: 0.2em;
     color: var(--accent-gold);
-    font-weight: 600;
     margin-bottom: 0.4rem;
 }
 
 .reel-overlay h4 {
-    font-family: var(--font-heading);
+    font-family: var(--font-heading) !important;
     font-size: 1.3rem;
-    font-weight: 400;
     margin-bottom: 0.8rem;
 }
 
@@ -744,9 +781,7 @@ button {
     100% { transform: translateX(calc(-440px * 4 - 2rem * 4)); }
 }
 
-/* ==========================================================================
-   INSTAGRAM MASONRY GALLERY PAGE STYLES - SMALL COMPACT GRID
-   ========================================================================== */
+/* Instagram Masonry Gallery Page */
 .gallery-page-hero {
     padding: 3.5rem 0 2.5rem 0;
     background-color: var(--bg-light);
@@ -754,7 +789,7 @@ button {
 }
 
 .gallery-page-title {
-    font-family: var(--font-heading);
+    font-family: var(--font-heading) !important;
     font-size: clamp(2rem, 3.5vw, 3.2rem);
     font-weight: 400;
     color: var(--text-primary);
@@ -763,6 +798,7 @@ button {
 }
 
 .gallery-page-desc {
+    font-family: var(--font-body);
     color: var(--text-secondary);
     font-size: 0.92rem;
     max-width: 600px;
@@ -783,10 +819,10 @@ button {
 }
 
 .gallery-tab {
+    font-family: var(--font-subheading);
     padding: 0.45rem 1.2rem;
-    font-size: 0.78rem;
+    font-size: 0.95rem;
     letter-spacing: 0.08em;
-    font-weight: 500;
     border: 1px solid var(--border-light);
     border-radius: 30px;
     background: var(--bg-white);
@@ -866,8 +902,8 @@ button {
 }
 
 .masonry-tag {
-    font-size: 0.72rem;
-    font-weight: 500;
+    font-family: var(--font-subheading) !important;
+    font-size: 0.95rem;
     letter-spacing: 0.08em;
     align-self: flex-start;
     margin-top: auto;
@@ -927,9 +963,9 @@ button {
 
 .badge-tag-gold {
     display: inline-block;
-    font-size: 0.7rem;
+    font-family: var(--font-subheading) !important;
+    font-size: 0.9rem;
     letter-spacing: 0.18em;
-    font-weight: 600;
     padding: 4px 14px;
     background: rgba(197, 160, 89, 0.15);
     color: var(--accent-gold);
@@ -946,6 +982,7 @@ button {
 }
 
 .dream-modal-header p {
+    font-family: var(--font-body);
     font-size: 0.95rem;
     color: var(--text-secondary);
     margin-bottom: 2.5rem;
@@ -960,8 +997,8 @@ button {
 }
 
 .builder-step-card h3 {
-    font-size: 1.15rem;
-    font-weight: 600;
+    font-family: var(--font-subheading) !important;
+    font-size: 1.35rem;
     margin-bottom: 1rem;
     color: var(--text-primary);
     display: flex;
@@ -984,11 +1021,11 @@ button {
     flex: 1;
     min-width: 100px;
     padding: 0.75rem 1rem;
+    font-family: var(--font-subheading);
+    font-size: 1rem;
     border: 1.5px solid var(--border-light) !important;
     background: #FFFFFF !important;
     color: var(--text-primary) !important;
-    font-size: 0.88rem;
-    font-weight: 500;
     border-radius: 6px;
     cursor: pointer;
     transition: var(--transition-smooth);
@@ -1014,10 +1051,10 @@ button {
 }
 
 .day-config-card h4 {
-    font-size: 1.1rem;
+    font-family: var(--font-subheading) !important;
+    font-size: 1.3rem;
     color: var(--accent-gold);
     margin-bottom: 1rem;
-    font-weight: 600;
 }
 
 .event-pills-wrap {
@@ -1028,8 +1065,9 @@ button {
 }
 
 .btn-event-pill {
+    font-family: var(--font-subheading);
     padding: 0.5rem 1.1rem;
-    font-size: 0.82rem;
+    font-size: 0.95rem;
     border-radius: 20px;
     border: 1.5px solid var(--border-light) !important;
     background: #F5F5F5 !important;
@@ -1057,8 +1095,8 @@ button {
 }
 
 .event-subcard h5 {
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-family: var(--font-subheading) !important;
+    font-size: 1.15rem;
     color: var(--text-primary);
     margin-bottom: 1rem;
 }
@@ -1071,6 +1109,7 @@ button {
 }
 
 .time-row input[type="time"] {
+    font-family: var(--font-body);
     width: 100%;
     padding: 0.6rem;
     border: 1px solid var(--border-light);
@@ -1086,6 +1125,7 @@ button {
 }
 
 .crew-box-item {
+    font-family: var(--font-body);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1128,7 +1168,8 @@ button {
     flex: 1;
     min-width: 110px;
     padding: 0.65rem 1rem;
-    font-size: 0.85rem;
+    font-family: var(--font-subheading);
+    font-size: 0.95rem;
     border: 1.5px solid var(--border-light) !important;
     background: #FFFFFF !important;
     color: var(--text-primary) !important;
@@ -1200,7 +1241,8 @@ button {
 }
 
 .cta-label {
-    font-size: 0.85rem;
+    font-family: var(--font-subheading) !important;
+    font-size: 1.1rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--accent-gold);
@@ -1209,7 +1251,7 @@ button {
 }
 
 .cta-title {
-    font-family: var(--font-heading);
+    font-family: var(--font-heading) !important;
     font-size: clamp(2.2rem, 4.2vw, 4.2rem);
     font-weight: 400;
     line-height: 1.18;
@@ -1219,9 +1261,9 @@ button {
 }
 
 .cta-desc {
+    font-family: var(--font-body);
     font-size: 0.95rem;
     color: rgba(255, 255, 255, 0.85);
-    font-weight: 300;
     line-height: 1.8;
     margin-bottom: 2.5rem;
 }
@@ -1231,8 +1273,8 @@ button {
     padding: 1rem 2.4rem;
     background-color: var(--bg-white);
     color: var(--text-primary);
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-family: var(--font-subheading);
+    font-size: 1.1rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     transition: var(--transition-smooth);
@@ -1249,7 +1291,8 @@ button {
 .cta-bottom-links {
     display: flex;
     gap: 1.5rem;
-    font-size: 0.85rem;
+    font-family: var(--font-subheading);
+    font-size: 1.05rem;
     letter-spacing: 0.15em;
     color: rgba(255, 255, 255, 0.8);
     margin-top: 4rem;
@@ -1270,7 +1313,8 @@ button {
 }
 
 .section-subtitle {
-    font-size: 0.85rem;
+    font-family: var(--font-subheading) !important;
+    font-size: 1.1rem;
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--text-muted);
@@ -1279,7 +1323,7 @@ button {
 }
 
 .contact-title {
-    font-family: var(--font-heading);
+    font-family: var(--font-heading) !important;
     font-size: clamp(2.4rem, 4.5vw, 4.5rem);
     font-weight: 400;
     line-height: 1.15;
@@ -1301,7 +1345,8 @@ button {
 }
 
 .info-label {
-    font-size: 0.8rem;
+    font-family: var(--font-subheading) !important;
+    font-size: 1.1rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--text-muted);
@@ -1310,18 +1355,17 @@ button {
 }
 
 .info-text {
+    font-family: var(--font-body);
     font-size: 0.95rem;
     color: var(--text-primary);
-    font-weight: 400;
     line-height: 1.6;
 }
 
 .social-links-inline {
     display: flex;
     gap: 1.25rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
+    font-family: var(--font-subheading);
+    font-size: 1.1rem;
 }
 
 .social-links-inline a:hover {
@@ -1351,11 +1395,11 @@ button {
 }
 
 .form-group label {
-    font-size: 0.75rem;
-    letter-spacing: 0.18em;
+    font-family: var(--font-subheading);
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: #555555;
-    font-weight: 500;
 }
 
 .form-group input,
@@ -1375,7 +1419,6 @@ button {
 .form-group input::placeholder,
 .form-group textarea::placeholder {
     color: #999999;
-    font-weight: 300;
 }
 
 .form-group input:focus,
@@ -1388,10 +1431,10 @@ button {
     padding: 1rem 2.5rem;
     background-color: var(--text-primary);
     color: var(--text-white);
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
+    font-family: var(--font-subheading);
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    font-weight: 600;
     transition: var(--transition-smooth);
     align-self: flex-start;
 }
@@ -1408,8 +1451,8 @@ button {
     background-color: #111111;
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
+    font-family: var(--font-body);
     font-size: 0.85rem;
-    letter-spacing: 0.05em;
 }
 
 /* Modals */
@@ -1483,6 +1526,24 @@ button {
 }
 
 @media (max-width: 900px) {
+    .floating-brand-logo {
+        top: 1rem;
+        left: 1rem;
+        padding: 0.4rem 1rem 0.4rem 0.6rem;
+    }
+
+    .floating-logo-img {
+        height: 40px;
+    }
+
+    .floating-logo-text {
+        font-size: 1rem;
+    }
+
+    .brand-logo-spacer {
+        width: 180px;
+    }
+
     .gallery-grid-7col-touch {
         grid-template-columns: repeat(4, 1fr);
     }
