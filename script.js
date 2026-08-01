@@ -41,12 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     animatedElements.forEach(el => scrollObserver.observe(el));
 
-    // 3. Photo Lightbox Modal (For 28-Photo Strip, Masonry & Gallery Items)
+    // 3. Photo Lightbox Modal
     const lightboxModal = document.getElementById('lightbox-modal');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxClose = document.getElementById('lightbox-close');
 
-    // Handle clicks dynamically using event delegation
     document.addEventListener('click', (e) => {
         const targetItem = e.target.closest('.gallery-item, .portfolio-item, .masonry-item');
         if (targetItem) {
@@ -106,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. Gallery Tab Filtering (For gallery.html Masonry Grid)
+    // 5. Gallery Tab Filtering
     const galleryTabs = document.querySelectorAll('.gallery-tab');
     const masonryItems = document.querySelectorAll('.masonry-item');
 
@@ -153,6 +152,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const openDreamBtns = document.querySelectorAll('.open-dream-modal-btn');
     const daysContainer = document.getElementById('days-config-container');
     const addDayBtn = document.getElementById('add-day-btn');
+
+    // Render immediately on page load
+    renderDreamBuilderUI();
 
     openDreamBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
