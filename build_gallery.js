@@ -27,6 +27,7 @@ folders.forEach(f => {
             <div class="masonry-img-wrapper">
                 <img src="${relPath}" loading="lazy" alt="${displayName}">
                 <div class="masonry-overlay">
+                    <img src="assets/images/logo.png" alt="Brown Lights Logo" class="overlay-logo-png">
                     <span class="masonry-tag">${displayName}</span>
                     <i class="fa-solid fa-expand expand-icon"></i>
                 </div>
@@ -123,4 +124,4 @@ const galleryPageHTML = `<!DOCTYPE html>
 `;
 
 fs.writeFileSync(path.join(__dirname, 'gallery.html'), galleryPageHTML, 'utf8');
-console.log('Successfully generated gallery.html!');
+console.log('Updated build_gallery.js with transparent PNG logo watermark overlay!');
