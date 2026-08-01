@@ -76,11 +76,12 @@ button {
     text-align: center;
 }
 
-/* Headings Typography - Tightly Compact Letter Spacing (-0.05em) for Didot Only */
+/* Headings Typography - Didot Regular with Natural Title/Sentence Casing */
 h1, h2, .hero-title, .about-title, .packages-main-title, .showcase-title, .cta-title, .contact-title, .gallery-page-title {
     font-family: var(--font-heading) !important;
     font-weight: 400 !important;
-    letter-spacing: -0.05em !important; /* Decreased to max tight fit right before overlapping */
+    letter-spacing: -0.05em !important;
+    text-transform: none !important; /* Preserves exact natural sentence/title case across mobile & desktop */
 }
 
 h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge-tag-gold, .reel-tag, .info-label, .masonry-tag {
@@ -255,6 +256,7 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     line-height: 1.15;
     color: var(--text-white);
     letter-spacing: -0.05em !important;
+    text-transform: none !important;
 }
 
 /* 28 Photo Instagram-Style Grid Strip */
@@ -419,7 +421,6 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     letter-spacing: -0.05em !important;
     color: var(--text-primary);
     margin-bottom: 2rem;
-    text-transform: uppercase;
 }
 
 .about-description {
@@ -667,7 +668,6 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     letter-spacing: -0.05em !important;
     margin-bottom: 1.5rem;
     color: var(--text-primary);
-    text-transform: uppercase;
 }
 
 .showcase-subtitle {
@@ -1249,7 +1249,6 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     line-height: 1.18;
     letter-spacing: -0.05em !important;
     margin-bottom: 1.75rem;
-    text-transform: uppercase;
 }
 
 .cta-desc {
@@ -1321,7 +1320,6 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     line-height: 1.15;
     letter-spacing: -0.05em !important;
     color: var(--text-primary);
-    text-transform: uppercase;
 }
 
 .contact-grid {
