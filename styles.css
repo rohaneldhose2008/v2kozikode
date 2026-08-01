@@ -105,12 +105,13 @@ button {
     gap: 1rem;
 }
 
-/* Big Logo */
+/* Big Grey Logo */
 .logo-img-big {
-    height: 75px;
+    height: 100px; /* BIGGER LOGO */
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+    filter: grayscale(100%) brightness(0.75) opacity(0.85); /* GREY COLOR */
+    transition: var(--transition-smooth);
 }
 
 .logo-text {
@@ -118,7 +119,7 @@ button {
     font-size: 1.4rem;
     font-weight: 600;
     letter-spacing: 0.25em;
-    color: var(--text-white);
+    color: #888888; /* GREY COLOR */
     text-transform: uppercase;
 }
 
@@ -286,17 +287,17 @@ button {
     filter: brightness(1.1);
 }
 
-/* Photo Hover Watermark PNG Overlay */
+/* Photo Hover Watermark PNG Overlay (BIGGER & GREY COLOR) */
 .overlay-logo-png {
-    width: 110px;
-    max-width: 75%;
+    width: 170px; /* BIGGER WATERMARK LOGO */
+    max-width: 85%;
     height: auto;
     object-fit: contain;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.9);
-    filter: brightness(0.95) grayscale(100%) opacity(0.88);
+    transform: translate(-50%, -50%) scale(0.95);
+    filter: grayscale(100%) brightness(0.65) opacity(0.85); /* GREY COLOR */
     pointer-events: none;
     transition: transform 0.4s ease, opacity 0.4s ease;
 }
@@ -307,7 +308,7 @@ button {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.45);
     opacity: 0;
     transition: opacity 0.4s ease;
     display: flex;
@@ -320,7 +321,7 @@ button {
 }
 
 .gallery-item:hover .overlay-logo-png {
-    transform: translate(-50%, -50%) scale(1.08);
+    transform: translate(-50%, -50%) scale(1.12);
     opacity: 0.95;
 }
 
@@ -860,7 +861,7 @@ button {
 }
 
 .masonry-item:hover .overlay-logo-png {
-    transform: translate(-50%, -50%) scale(1.08);
+    transform: translate(-50%, -50%) scale(1.12);
     opacity: 0.95;
 }
 
@@ -878,9 +879,7 @@ button {
     align-self: flex-end;
 }
 
-/* ==========================================================================
-   INTERACTIVE DREAM PACKAGE BUILDER MODAL - VISIBLE CONTROLS & BUTTON STYLES
-   ========================================================================== */
+/* Modal Controls */
 .dream-modal {
     position: fixed;
     top: 0;
@@ -974,7 +973,6 @@ button {
     color: var(--accent-gold);
 }
 
-/* Visible Day Buttons Pill Controls */
 .days-flex-grid {
     display: flex;
     gap: 0.75rem;
@@ -1006,7 +1004,6 @@ button {
     border-color: var(--accent-gold) !important;
 }
 
-/* Day Config Card Container */
 .day-config-card {
     background: var(--bg-white);
     border: 1px solid var(--border-light);
@@ -1120,7 +1117,6 @@ button {
     border-color: var(--accent-gold) !important;
 }
 
-/* Visible Deliverables Pill Controls */
 .pills-grid {
     display: flex;
     gap: 0.75rem;
