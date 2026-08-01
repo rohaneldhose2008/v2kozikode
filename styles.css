@@ -108,25 +108,19 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 }
 
 .brand-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.85rem;
+    display: inline-block;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
 }
 
 .logo-img-big {
-    height: 65px;
+    height: 70px;
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6));
-}
-
-.logo-text {
-    font-family: var(--font-subheading);
-    font-size: 1.3rem;
-    font-weight: 400;
-    letter-spacing: 0.18em;
-    color: #FFFFFF;
-    text-transform: uppercase;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.7));
+    background: transparent !important;
 }
 
 .main-nav .nav-list {

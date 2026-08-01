@@ -54,12 +54,11 @@ const galleryPageHTML = `<!DOCTYPE html>
 </head>
 <body class="white-theme">
 
-    <!-- Fixed Site Header Navigation -->
+    <!-- Fixed Floating Site Header Navigation (Only Logo, No Text, No Background Box) -->
     <header class="site-header subpage-header">
         <div class="header-container">
             <a href="index.html" class="brand-logo">
                 <img src="assets/images/logo.png" alt="Brown Lights Media Logo" class="logo-img-big">
-                <span class="logo-text">BROWN LIGHTS MEDIA</span>
             </a>
             
             <nav class="main-nav">
@@ -124,4 +123,4 @@ const galleryPageHTML = `<!DOCTYPE html>
 `;
 
 fs.writeFileSync(path.join(__dirname, 'gallery.html'), galleryPageHTML, 'utf8');
-console.log('Updated build_gallery.js to clean up site header logo!');
+console.log('Updated build_gallery.js for pure logo PNG without text or bg box!');
