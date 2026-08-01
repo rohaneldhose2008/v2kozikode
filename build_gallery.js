@@ -44,6 +44,10 @@ const galleryPageHTML = `<!DOCTYPE html>
     <title>Gallery – Brown Lights Media Kozhikode</title>
     <meta name="description" content="Explore our complete Kozhikode luxury wedding photography collections and couple stories by Brown Lights Media.">
     
+    <!-- Favicon set to logo.png -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="shortcut icon" href="assets/images/logo.png">
+
     <!-- Google Fonts: Bebas Neue (Subheadings) & Open Sans/Google Sans fallback -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,12 +58,15 @@ const galleryPageHTML = `<!DOCTYPE html>
 </head>
 <body class="white-theme">
 
-    <!-- Fixed Floating Site Header Navigation (Only Logo, No Text, No Background Box) -->
+    <!-- Fixed Floating Big Pure PNG Signature Logo -->
+    <a href="index.html" class="floating-brand-logo" title="Brown Lights Media Home">
+        <img src="assets/images/logo.png" alt="Brown Lights Media Logo">
+    </a>
+
+    <!-- Fixed Navigation Header -->
     <header class="site-header subpage-header">
         <div class="header-container">
-            <a href="index.html" class="brand-logo">
-                <img src="assets/images/logo.png" alt="Brown Lights Media Logo" class="logo-img-big">
-            </a>
+            <div class="brand-logo-spacer"></div>
             
             <nav class="main-nav">
                 <ul class="nav-list">
@@ -123,4 +130,4 @@ const galleryPageHTML = `<!DOCTYPE html>
 `;
 
 fs.writeFileSync(path.join(__dirname, 'gallery.html'), galleryPageHTML, 'utf8');
-console.log('Updated build_gallery.js for pure logo PNG without text or bg box!');
+console.log('Updated build_gallery.js for fixed floating big logo & logo favicon!');
