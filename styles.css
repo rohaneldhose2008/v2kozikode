@@ -170,6 +170,13 @@ button {
     transition: var(--transition-smooth);
 }
 
+/* Header for subpages like gallery.html */
+.subpage-header {
+    background: #111111;
+    position: relative;
+    padding: 1.5rem 3.5rem;
+}
+
 /* Hero Section */
 .hero-section {
     position: relative;
@@ -697,6 +704,133 @@ button {
     100% { transform: translateX(calc(-440px * 4 - 2rem * 4)); }
 }
 
+/* ==========================================================================
+   INSTAGRAM MASONRY GALLERY PAGE STYLES
+   ========================================================================== */
+.gallery-page-hero {
+    padding: 10rem 0 4rem 0;
+    background-color: var(--bg-light);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.gallery-page-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.gallery-page-desc {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.gallery-section {
+    padding: 4rem 0 8rem 0;
+    background-color: var(--bg-white);
+}
+
+.gallery-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 3.5rem;
+}
+
+.gallery-tab {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    border: 1px solid var(--border-light);
+    border-radius: 30px;
+    background: var(--bg-white);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.gallery-tab.active, .gallery-tab:hover {
+    background: var(--accent-gold);
+    color: #FFFFFF;
+    border-color: var(--accent-gold);
+}
+
+/* Instagram Masonry Grid - Preserves Natural Aspect Ratio (Portrait stays Portrait, Landscape stays Landscape) */
+.insta-masonry-grid {
+    column-count: 3;
+    column-gap: 1.25rem;
+    width: 100%;
+}
+
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 1.25rem;
+    cursor: pointer;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    transition: var(--transition-smooth);
+}
+
+.masonry-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.masonry-img-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.masonry-img-wrapper img {
+    width: 100%;
+    height: auto; /* Natural Aspect Ratio */
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.masonry-item:hover img {
+    transform: scale(1.05);
+}
+
+.masonry-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: #FFFFFF;
+}
+
+.masonry-item:hover .masonry-overlay {
+    opacity: 1;
+}
+
+.masonry-tag {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+.expand-icon {
+    font-size: 1rem;
+    color: var(--accent-gold);
+}
+
 /* CTA Banner Section */
 .cta-banner-section {
     position: relative;
@@ -962,257 +1096,6 @@ button {
     letter-spacing: 0.05em;
 }
 
-/* ==========================================================================
-   INTERACTIVE DREAM PACKAGE BUILDER MODAL (Full Day 1, 2, 3, 4 + Events & Timings)
-   ========================================================================== */
-.dream-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(10px);
-    z-index: 2100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 1rem;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-}
-
-.dream-modal.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.dream-modal-content {
-    background: var(--bg-white);
-    width: 100%;
-    max-width: 820px;
-    max-height: 92vh;
-    overflow-y: auto;
-    border-radius: 14px;
-    padding: 3rem 2.5rem;
-    position: relative;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
-    border: 1px solid var(--border-light);
-}
-
-.dream-modal-close {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.8rem;
-    font-size: 2.5rem;
-    color: var(--text-primary);
-    line-height: 1;
-}
-
-.badge-tag-gold {
-    display: inline-block;
-    font-size: 0.7rem;
-    letter-spacing: 0.18em;
-    font-weight: 600;
-    padding: 4px 14px;
-    background: rgba(197, 160, 89, 0.15);
-    color: var(--accent-gold);
-    border-radius: 20px;
-    margin-bottom: 0.75rem;
-}
-
-.dream-modal-header h2 {
-    font-family: var(--font-handwriting);
-    font-size: 3.8rem;
-    font-weight: 400;
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-}
-
-.dream-modal-header p {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    margin-bottom: 2.5rem;
-}
-
-/* Step Blocks */
-.builder-step-card {
-    background: var(--bg-light);
-    border: 1px solid var(--border-light);
-    padding: 1.75rem;
-    border-radius: 10px;
-    margin-bottom: 2rem;
-}
-
-.builder-step-card h3 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--text-primary);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.builder-step-card h3 i {
-    color: var(--accent-gold);
-}
-
-/* Day selector pills */
-.days-flex-grid {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-}
-
-.btn-day-pill {
-    flex: 1;
-    min-width: 90px;
-    padding: 0.8rem;
-    border: 1px solid var(--border-light);
-    background: var(--bg-white);
-    color: var(--text-primary);
-    font-size: 0.88rem;
-    font-weight: 500;
-    border-radius: 6px;
-    transition: var(--transition-smooth);
-}
-
-.btn-day-pill.active, .btn-day-pill:hover {
-    background: var(--accent-gold);
-    color: #FFFFFF;
-    border-color: var(--accent-gold);
-}
-
-/* Day Cards Container */
-.day-config-card {
-    background: var(--bg-white);
-    border: 1px solid var(--border-light);
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-}
-
-.day-config-card h4 {
-    font-size: 1.1rem;
-    color: var(--accent-gold);
-    margin-bottom: 1rem;
-    font-weight: 600;
-}
-
-.event-pills-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-bottom: 1.5rem;
-}
-
-.btn-event-pill {
-    padding: 0.45rem 1rem;
-    font-size: 0.82rem;
-    border-radius: 20px;
-    border: 1px solid var(--border-light);
-    background: var(--bg-light);
-    color: var(--text-primary);
-    transition: var(--transition-smooth);
-}
-
-.btn-event-pill.active {
-    background: var(--accent-gold);
-    color: #FFFFFF;
-    border-color: var(--accent-gold);
-}
-
-/* Configured Event Sub-Block */
-.event-subcard {
-    background: var(--bg-light);
-    border: 1px solid var(--border-light);
-    padding: 1.25rem;
-    border-radius: 8px;
-    margin-top: 1rem;
-}
-
-.event-subcard h5 {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-}
-
-.time-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-.time-row input[type="time"] {
-    width: 100%;
-    padding: 0.6rem;
-    border: 1px solid var(--border-light);
-    border-radius: 6px;
-    background: var(--bg-white);
-    color: var(--text-primary);
-}
-
-.crew-grid-inline {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-}
-
-.crew-box-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--bg-white);
-    padding: 0.6rem 0.9rem;
-    border: 1px solid var(--border-light);
-    border-radius: 6px;
-    font-size: 0.85rem;
-}
-
-.counter-btn-mini {
-    width: 26px;
-    height: 26px;
-    border-radius: 4px;
-    border: 1px solid var(--border-light);
-    background: var(--bg-light);
-    color: var(--text-primary);
-    font-size: 0.95rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Deliverable Pill Selector */
-.pills-grid {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    margin-bottom: 1.25rem;
-}
-
-.btn-pill-opt {
-    flex: 1;
-    min-width: 100px;
-    padding: 0.6rem 0.8rem;
-    font-size: 0.85rem;
-    border: 1px solid var(--border-light);
-    background: var(--bg-white);
-    color: var(--text-primary);
-    border-radius: 6px;
-    transition: var(--transition-smooth);
-}
-
-.btn-pill-opt.active {
-    background: var(--accent-gold);
-    color: #FFFFFF;
-    border-color: var(--accent-gold);
-}
-
 /* Modals */
 .lightbox-modal,
 .video-modal {
@@ -1301,9 +1184,13 @@ button {
     .contact-grid {
         grid-template-columns: 1fr;
     }
+
+    .insta-masonry-grid {
+        column-count: 2;
+    }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .site-header {
         padding: 1.25rem 1.5rem;
     }
@@ -1339,6 +1226,10 @@ button {
 
     .gallery-grid-7col-touch {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .insta-masonry-grid {
+        column-count: 1;
     }
 
     .form-row, .crew-details, .crew-grid-inline, .time-row {

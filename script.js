@@ -41,20 +41,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     animatedElements.forEach(el => scrollObserver.observe(el));
 
-    // 3. Photo Lightbox Modal (For 28-Photo Strip & Gallery Items)
+    // 3. Photo Lightbox Modal (For 28-Photo Strip, Masonry & Gallery Items)
     const lightboxModal = document.getElementById('lightbox-modal');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxClose = document.getElementById('lightbox-close');
 
-    const galleryItems = document.querySelectorAll('.gallery-item, .portfolio-item');
-    galleryItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const fullSrc = item.getAttribute('data-full');
+    // Handle clicks dynamically using event delegation
+    document.addEventListener('click', (e) => {
+        const targetItem = e.target.closest('.gallery-item, .portfolio-item, .masonry-item');
+        if (targetItem) {
+            const fullSrc = targetItem.getAttribute('data-full');
             if (fullSrc && lightboxModal && lightboxImg) {
                 lightboxImg.src = fullSrc;
                 lightboxModal.classList.add('active');
             }
-        });
+        }
     });
 
     if (lightboxClose) {
@@ -105,8 +106,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 5. Gallery Tab Filtering (For gallery.html Masonry Grid)
+    const galleryTabs = document.querySelectorAll('.gallery-tab');
+    const masonryItems = document.querySelectorAll('.masonry-item');
+
+    galleryTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            galleryTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            const filter = tab.getAttribute('data-filter');
+
+            masonryItems.forEach(item => {
+                if (filter === 'all' || item.classList.contains(filter)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+
     // ==========================================================================
-    // 5. EXACT KOZHIKODE DREAM PACKAGE BUILDER ENGINE
+    // 6. EXACT KOZHIKODE DREAM PACKAGE BUILDER ENGINE
     // ==========================================================================
 
     const EVENTS_LIST = [
@@ -114,7 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
         'Wedding Eve', 'Wedding Day', 'Reception', 'Pre-Wedding', 'Bride-to-be'
     ];
 
-    // Dream Builder State
     let dreamState = {
         numDays: 1,
         isCustomDays: false,
@@ -133,7 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const daysContainer = document.getElementById('days-config-container');
     const addDayBtn = document.getElementById('add-day-btn');
 
-    // Open / Close Modal
     openDreamBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -158,7 +178,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Update Days Count
     function updateNumDays(newNum, isCustom = false) {
         dreamState.numDays = newNum;
         dreamState.isCustomDays = isCustom;
@@ -175,9 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderDreamBuilderUI();
     }
 
-    // Render Full Interactive Dream Builder UI
     function renderDreamBuilderUI() {
-        // Update Day Option Pills active state
         document.querySelectorAll('.btn-day-pill').forEach(btn => {
             const opt = btn.getAttribute('data-days');
             if (opt === 'more' && dreamState.isCustomDays) {
@@ -189,12 +206,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Show/Hide Add Day button
         if (addDayBtn) {
             addDayBtn.style.display = dreamState.isCustomDays ? 'block' : 'none';
         }
 
-        // Render Day Cards
         if (!daysContainer) return;
         daysContainer.innerHTML = '';
 
@@ -202,7 +217,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const dayCard = document.createElement('div');
             dayCard.className = 'day-config-card';
 
-            // Day Header & Event Selection Pills
             let eventPillsHTML = EVENTS_LIST.map(eventName => {
                 const isSelected = day.events.some(e => e.name === eventName);
                 return `
@@ -212,7 +226,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
             }).join('');
 
-            // Render Configured Events HTML
             let configuredEventsHTML = '';
             if (day.events.length > 0) {
                 configuredEventsHTML = day.events.map((ev, evIdx) => `
@@ -265,9 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
         attachDreamEventListeners();
     }
 
-    // Attach Dynamic Event Listeners inside Dream Builder
     function attachDreamEventListeners() {
-        // Event Pills Click Handler
         document.querySelectorAll('.btn-event-pill').forEach(btn => {
             btn.addEventListener('click', () => {
                 const dIdx = parseInt(btn.getAttribute('data-day'));
@@ -291,7 +302,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Time Change Listeners
         document.querySelectorAll('.event-time-start').forEach(input => {
             input.addEventListener('change', (e) => {
                 const dIdx = parseInt(input.getAttribute('data-day'));
@@ -308,7 +318,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Crew Increment / Decrement
         document.querySelectorAll('.photo-dec').forEach(btn => {
             btn.addEventListener('click', () => {
                 const dIdx = parseInt(btn.getAttribute('data-day'));
@@ -348,7 +357,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Day Pills Bar Handler
     document.querySelectorAll('.btn-day-pill').forEach(btn => {
         btn.addEventListener('click', () => {
             const opt = btn.getAttribute('data-days');
@@ -364,14 +372,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Add Day Button
     if (addDayBtn) {
         addDayBtn.addEventListener('click', () => {
             updateNumDays(dreamState.numDays + 1, true);
         });
     }
 
-    // Deliverable Options Listeners
     document.querySelectorAll('.photos-opt').forEach(btn => {
         btn.addEventListener('click', () => {
             document.querySelectorAll('.photos-opt').forEach(b => b.classList.remove('active'));
@@ -408,13 +414,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Submit Dream Package Payload to WhatsApp
     const dreamForm = document.getElementById('dream-builder-form');
     if (dreamForm) {
         dreamForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            // Construct WhatsApp Message Payload
             let scheduleText = dreamState.daysConfig.map(day => {
                 if (day.events.length === 0) return `*Day ${day.id}*: No events selected`;
                 const eventsList = day.events.map(ev => 
@@ -437,7 +441,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 6. Contact Form Submission
+    // 7. Contact Form Submission
     const contactForm = document.getElementById('wedding-contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
