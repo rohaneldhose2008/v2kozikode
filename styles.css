@@ -88,58 +88,14 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     letter-spacing: 0.12em !important;
 }
 
-/* Floating Brand Logo All Through Website */
-.floating-brand-logo {
-    position: fixed;
-    top: 1.5rem;
-    left: 2rem;
-    z-index: 2000;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(12px);
-    padding: 0.5rem 1.3rem 0.5rem 0.8rem;
-    border-radius: 40px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.14);
-    border: 1px solid rgba(226, 226, 226, 0.8);
-    transition: var(--transition-smooth);
-}
-
-.floating-brand-logo:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
-    background: #FFFFFF;
-}
-
-.floating-logo-img {
-    height: 55px;
-    width: auto;
-    object-fit: contain;
-    filter: grayscale(100%) brightness(0.7) opacity(0.85);
-}
-
-.floating-logo-text {
-    font-family: var(--font-subheading);
-    font-size: 1.25rem;
-    letter-spacing: 0.18em;
-    color: #333333;
-    text-transform: uppercase;
-    line-height: 1;
-}
-
-.brand-logo-spacer {
-    width: 260px;
-}
-
-/* Header & Navigation - NON-FLOATING */
+/* Site Header Navigation - Clean Transparent Overlay over Hero Video */
 .site-header {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 2rem 3.5rem;
+    padding: 1.75rem 3.5rem;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
@@ -151,6 +107,28 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     margin: 0 auto;
 }
 
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.logo-img-big {
+    height: 65px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6));
+}
+
+.logo-text {
+    font-family: var(--font-subheading);
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
 .main-nav .nav-list {
     display: flex;
     list-style: none;
@@ -158,12 +136,11 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 }
 
 .nav-link {
-    font-family: var(--font-body);
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.9rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: capitalize;
+    font-family: var(--font-subheading);
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.05rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
     position: relative;
     padding-bottom: 4px;
 }
@@ -201,7 +178,7 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     transition: var(--transition-smooth);
 }
 
-/* Subpage Header */
+/* Subpage Header for gallery.html */
 .subpage-header {
     background: #111111;
     position: relative;
@@ -1526,22 +1503,8 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 }
 
 @media (max-width: 900px) {
-    .floating-brand-logo {
-        top: 1rem;
-        left: 1rem;
-        padding: 0.4rem 1rem 0.4rem 0.6rem;
-    }
-
-    .floating-logo-img {
-        height: 40px;
-    }
-
-    .floating-logo-text {
-        font-size: 1rem;
-    }
-
-    .brand-logo-spacer {
-        width: 180px;
+    .site-header {
+        padding: 1.25rem 2rem;
     }
 
     .gallery-grid-7col-touch {

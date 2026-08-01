@@ -54,16 +54,13 @@ const galleryPageHTML = `<!DOCTYPE html>
 </head>
 <body class="white-theme">
 
-    <!-- Fixed Floating Logo Badge All Through Website -->
-    <a href="index.html" class="floating-brand-logo" title="Brown Lights Media Home">
-        <img src="assets/images/logo.png" alt="Brown Lights Media Logo" class="floating-logo-img">
-        <span class="floating-logo-text">BROWN LIGHTS MEDIA</span>
-    </a>
-
-    <!-- Header Navigation (Subpage Header) -->
+    <!-- Fixed Site Header Navigation -->
     <header class="site-header subpage-header">
         <div class="header-container">
-            <div class="brand-logo-spacer"></div>
+            <a href="index.html" class="brand-logo">
+                <img src="assets/images/logo.png" alt="Brown Lights Media Logo" class="logo-img-big">
+                <span class="logo-text">BROWN LIGHTS MEDIA</span>
+            </a>
             
             <nav class="main-nav">
                 <ul class="nav-list">
@@ -111,7 +108,7 @@ const galleryPageHTML = `<!DOCTYPE html>
     <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-container">
-            <p>&copy; 2026 BROWN LIGHTS MEDIA KOZHIKODE. All Rights Reserved. The art of creating memories that last a lifetime.</p>
+            <p>&copy; 2026 BROWN LIGHTS MEDIA KOZHIKODE. All Rights Reserved. Crafting stories through light, emotion, and creativity.</p>
         </div>
     </footer>
 
@@ -127,4 +124,4 @@ const galleryPageHTML = `<!DOCTYPE html>
 `;
 
 fs.writeFileSync(path.join(__dirname, 'gallery.html'), galleryPageHTML, 'utf8');
-console.log('Updated build_gallery.js with floating logo and new Didot / Bebas Neue / Google Sans fonts!');
+console.log('Updated build_gallery.js to clean up site header logo!');
