@@ -76,10 +76,11 @@ button {
     text-align: center;
 }
 
-/* Headings Typography */
+/* Headings Typography - Decreased Letter Spacing for Didot Only */
 h1, h2, .hero-title, .about-title, .packages-main-title, .showcase-title, .cta-title, .contact-title, .gallery-page-title {
     font-family: var(--font-heading) !important;
     font-weight: 400 !important;
+    letter-spacing: -0.03em !important; /* Decreased letter spacing for Didot fonts only */
 }
 
 h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge-tag-gold, .reel-tag, .info-label, .masonry-tag {
@@ -253,7 +254,7 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     font-weight: 400;
     line-height: 1.15;
     color: var(--text-white);
-    letter-spacing: 0.02em;
+    letter-spacing: -0.03em !important;
 }
 
 /* 28 Photo Instagram-Style Grid Strip */
@@ -415,7 +416,7 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     font-size: clamp(2rem, 3.2vw, 3.4rem);
     font-weight: 400;
     line-height: 1.25;
-    letter-spacing: 0.05em;
+    letter-spacing: -0.03em !important;
     color: var(--text-primary);
     margin-bottom: 2rem;
     text-transform: uppercase;
@@ -455,6 +456,7 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     font-weight: 400;
     color: var(--text-primary);
     margin-bottom: 1rem;
+    letter-spacing: -0.03em !important;
 }
 
 .packages-subtitle {
@@ -662,7 +664,7 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     font-size: clamp(2rem, 3.5vw, 3.5rem);
     font-weight: 400;
     line-height: 1.2;
-    letter-spacing: 0.05em;
+    letter-spacing: -0.03em !important;
     margin-bottom: 1.5rem;
     color: var(--text-primary);
     text-transform: uppercase;
@@ -741,6 +743,7 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 .reel-overlay h4 {
     font-family: var(--font-heading) !important;
     font-size: 1.3rem;
+    letter-spacing: -0.03em !important;
     margin-bottom: 0.8rem;
 }
 
@@ -783,6 +786,7 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     color: var(--text-primary);
     margin-top: 0.4rem;
     margin-bottom: 0.5rem;
+    letter-spacing: -0.03em !important;
 }
 
 .gallery-page-desc {
@@ -1243,7 +1247,7 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     font-size: clamp(2.2rem, 4.2vw, 4.2rem);
     font-weight: 400;
     line-height: 1.18;
-    letter-spacing: 0.03em;
+    letter-spacing: -0.03em !important;
     margin-bottom: 1.75rem;
     text-transform: uppercase;
 }
@@ -1315,7 +1319,7 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     font-size: clamp(2.4rem, 4.5vw, 4.5rem);
     font-weight: 400;
     line-height: 1.15;
-    letter-spacing: 0.05em;
+    letter-spacing: -0.03em !important;
     color: var(--text-primary);
     text-transform: uppercase;
 }
