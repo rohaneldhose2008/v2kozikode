@@ -23,17 +23,13 @@ folders.forEach(f => {
 
     const coverImageRelPath = `assets/images/${folderName}/${images[0]}`;
 
-    // 1:1 Instagram Post Square Folder Card
+    // 1:1 Instagram Post Square Folder Card (No rounded corners, touches each other, name on hover, no photo counts)
     folderCardsHTML += `
         <div class="insta-folder-card" data-folder="${filterKey}">
             <div class="folder-square-wrapper">
                 <img src="${coverImageRelPath}" loading="lazy" alt="${displayName}" class="folder-cover-img">
                 <div class="folder-card-overlay">
-                    <div class="folder-badge-icon"><i class="fa-solid fa-folder-open"></i></div>
-                    <div class="folder-info">
-                        <h3 class="folder-title">${displayName}</h3>
-                        <span class="folder-count-pill">${images.length} Photos</span>
-                    </div>
+                    <h3 class="folder-title">${displayName}</h3>
                 </div>
             </div>
         </div>\n`;
@@ -45,8 +41,7 @@ folders.forEach(f => {
             <div class="folder-photo-item" data-full="${relPath}">
                 <img src="${relPath}" loading="lazy" alt="${displayName}">
                 <div class="photo-item-overlay">
-                    <img src="assets/images/logo.png" alt="Brown Lights Logo" class="overlay-logo-png">
-                    <i class="fa-solid fa-expand expand-icon"></i>
+                    <span class="photo-hover-name">${displayName}</span>
                 </div>
             </div>`;
     }).join('');
@@ -56,9 +51,7 @@ folders.forEach(f => {
             <div class="folder-view-container">
                 <div class="folder-view-header">
                     <div class="folder-title-wrap">
-                        <i class="fa-solid fa-folder-open folder-header-icon"></i>
                         <h2>${displayName}</h2>
-                        <span class="folder-count-badge">${images.length} Photos</span>
                     </div>
                     <button class="btn-close-folder-view" data-close="${filterKey}">&times;</button>
                 </div>
@@ -125,14 +118,14 @@ const galleryPageHTML = `<!DOCTYPE html>
         <div class="container">
             <span class="section-tag-gold">Collections</span>
             <h1 class="gallery-page-title">Brown Lights Media Gallery</h1>
-            <p class="gallery-page-desc">Select any album folder below to explore full wedding story photos in Instagram post format.</p>
+            <p class="gallery-page-desc">Select any album folder below to explore full wedding story photos.</p>
         </div>
     </section>
 
     <!-- Instagram Folder-Wise Gallery Section -->
     <section class="gallery-section">
-        <div class="container">
-            <!-- 1:1 Instagram Post Square Shape Folder Grid -->
+        <div class="container" style="max-width: 1200px; padding: 0;">
+            <!-- Seamless 1:1 Instagram Post Square Grid (No gaps, no rounded corners, name on hover) -->
             <div class="insta-folders-grid">
                 ${folderCardsHTML}
             </div>
@@ -162,4 +155,4 @@ const galleryPageHTML = `<!DOCTYPE html>
 `;
 
 fs.writeFileSync(path.join(__dirname, 'gallery.html'), galleryPageHTML, 'utf8');
-console.log('Successfully generated gallery.html with Instagram square folder cards!');
+console.log('Successfully updated build_gallery.js for flush Instagram square folders with name on hover and zero rounded corners!');
