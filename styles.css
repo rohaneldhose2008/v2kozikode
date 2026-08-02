@@ -18,9 +18,9 @@
     --accent-gold-hover: #b08d46;
     --border-light: #E2E2E2;
 
-    /* Requested Font Stack: Didot Regular, Bebas Neue, Google Sans */
+    /* Requested Font Stack: Didot Regular, Cinzel / Bodoni MT, Google Sans */
     --font-heading: 'Didot', 'Bodoni MT', 'Cinzel', serif;
-    --font-subheading: 'Bebas Neue', 'Cinzel', sans-serif;
+    --font-subheading: 'Cinzel', 'Bodoni MT', serif;
     --font-body: 'Open Sans', 'Google Sans', 'Product Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-handwriting: 'Great Vibes', cursive;
     --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
@@ -76,18 +76,21 @@ button {
     text-align: center;
 }
 
-/* Headings Typography - Didot Regular with Natural Title/Sentence Casing */
-h1, h2, .hero-title, .about-title, .packages-main-title, .showcase-title, .cta-title, .contact-title, .gallery-page-title {
+/* Headings Typography - Didot Regular & Cinzel with Natural Casing & Default Word Spacing */
+h1, h2, h3, h4, h5, h6, .hero-title, .about-title, .packages-main-title, .showcase-title, .cta-title, .contact-title, .gallery-page-title {
     font-family: var(--font-heading) !important;
     font-weight: 400 !important;
-    letter-spacing: -0.05em !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
     text-transform: none !important; /* Preserves exact natural sentence/title case across mobile & desktop */
 }
 
 h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge-tag-gold, .reel-tag, .info-label, .masonry-tag {
     font-family: var(--font-subheading) !important;
     font-weight: 400 !important;
-    letter-spacing: 0.12em !important;
+    letter-spacing: 0.05em;
+    word-spacing: normal !important;
+    text-transform: none !important;
 }
 
 /* Fixed Floating Big Pure PNG Signature Logo (Floats everywhere as you scroll down) */
@@ -152,8 +155,8 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     font-family: var(--font-subheading);
     color: rgba(255, 255, 255, 0.95);
     font-size: 1.05rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-transform: none;
     position: relative;
     padding-bottom: 4px;
 }
@@ -255,7 +258,8 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     font-weight: 400;
     line-height: 1.15;
     color: var(--text-white);
-    letter-spacing: -0.05em !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
     text-transform: none !important;
 }
 
@@ -358,10 +362,10 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     background-color: var(--text-primary);
     color: var(--text-white);
     font-size: 0.85rem;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.08em;
     font-weight: 600;
     font-family: var(--font-subheading);
-    text-transform: uppercase;
+    text-transform: none;
     border-radius: 2px;
     transition: var(--transition-smooth);
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
@@ -418,7 +422,8 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     font-size: clamp(2rem, 3.2vw, 3.4rem);
     font-weight: 400;
     line-height: 1.25;
-    letter-spacing: -0.05em !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
     color: var(--text-primary);
     margin-bottom: 2rem;
 }
@@ -443,8 +448,8 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 .section-tag-gold {
     font-family: var(--font-subheading) !important;
     font-size: 1.1rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-transform: none;
     color: var(--accent-gold);
     font-weight: 400;
     display: block;
@@ -457,7 +462,8 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     font-weight: 400;
     color: var(--text-primary);
     margin-bottom: 1rem;
-    letter-spacing: -0.05em !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
 }
 
 .packages-subtitle {
@@ -559,8 +565,8 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 .crew-day h5 {
     font-family: var(--font-subheading) !important;
     font-size: 1.05rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-transform: none;
     color: var(--text-muted);
     margin-bottom: 0.5rem;
 }
@@ -627,8 +633,8 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     padding: 1.1rem;
     font-family: var(--font-subheading);
     font-size: 1.1rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-transform: none;
     border-radius: 4px;
     transition: var(--transition-smooth);
 }
@@ -665,7 +671,8 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     font-size: clamp(2rem, 3.5vw, 3.5rem);
     font-weight: 400;
     line-height: 1.2;
-    letter-spacing: -0.05em !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
     margin-bottom: 1.5rem;
     color: var(--text-primary);
 }
@@ -735,7 +742,8 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 .reel-tag {
     font-family: var(--font-subheading) !important;
     font-size: 0.9rem;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.08em;
+    text-transform: none;
     color: var(--accent-gold);
     margin-bottom: 0.4rem;
 }
@@ -743,7 +751,8 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 .reel-overlay h4 {
     font-family: var(--font-heading) !important;
     font-size: 1.3rem;
-    letter-spacing: -0.05em !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
     margin-bottom: 0.8rem;
 }
 
@@ -786,7 +795,8 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     color: var(--text-primary);
     margin-top: 0.4rem;
     margin-bottom: 0.5rem;
-    letter-spacing: -0.05em !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
 }
 
 .gallery-page-desc {
@@ -1235,8 +1245,8 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 .cta-label {
     font-family: var(--font-subheading) !important;
     font-size: 1.1rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-transform: none;
     color: var(--accent-gold);
     display: block;
     margin-bottom: 1.5rem;
@@ -1247,7 +1257,8 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     font-size: clamp(2.2rem, 4.2vw, 4.2rem);
     font-weight: 400;
     line-height: 1.18;
-    letter-spacing: -0.05em !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
     margin-bottom: 1.75rem;
 }
 
@@ -1266,8 +1277,8 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     color: var(--text-primary);
     font-family: var(--font-subheading);
     font-size: 1.1rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-transform: none;
     transition: var(--transition-smooth);
     border-radius: 2px;
 }
@@ -1284,7 +1295,7 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     gap: 1.5rem;
     font-family: var(--font-subheading);
     font-size: 1.05rem;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.08em;
     color: rgba(255, 255, 255, 0.8);
     margin-top: 4rem;
 }
@@ -1306,8 +1317,8 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 .section-subtitle {
     font-family: var(--font-subheading) !important;
     font-size: 1.1rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-transform: none;
     color: var(--text-muted);
     display: block;
     margin-bottom: 1rem;
@@ -1318,7 +1329,8 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     font-size: clamp(2.4rem, 4.5vw, 4.5rem);
     font-weight: 400;
     line-height: 1.15;
-    letter-spacing: -0.05em !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
     color: var(--text-primary);
 }
 
@@ -1337,8 +1349,8 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 .info-label {
     font-family: var(--font-subheading) !important;
     font-size: 1.1rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-transform: none;
     color: var(--text-muted);
     display: block;
     margin-bottom: 0.75rem;
@@ -1387,8 +1399,8 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 .form-group label {
     font-family: var(--font-subheading);
     font-size: 0.95rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-transform: none;
     color: #555555;
 }
 
@@ -1423,8 +1435,8 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     color: var(--text-white);
     font-family: var(--font-subheading);
     font-size: 1.1rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-transform: none;
     transition: var(--transition-smooth);
     align-self: flex-start;
 }

@@ -90,7 +90,7 @@ const galleryPageHTML = `<!DOCTYPE html>
     <!-- Gallery Hero Banner -->
     <section class="gallery-page-hero text-center">
         <div class="container">
-            <span class="section-tag-gold">PORTFOLIO STORIES</span>
+            <span class="section-tag-gold">Portfolio Stories</span>
             <h1 class="gallery-page-title">Brown Lights Media Gallery</h1>
             <p class="gallery-page-desc">Preserving natural portrait and landscape moments across Kozhikode celebrations.</p>
         </div>
