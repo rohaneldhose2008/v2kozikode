@@ -21,9 +21,11 @@ folders.forEach(f => {
 
     if (images.length === 0) return;
 
-    const coverImageRelPath = `assets/images/${folderName}/${images[0]}`;
+    // Find designated thumbnail file (e.g. 0.jpg, 00.jpg, 01.jpg, 000.jpg, 001.jpg, thumb.jpg, cover.jpg) or default to first image
+    const coverImage = images.find(img => /^0|^thumb|^cover|^00|^01|^000/i.test(img)) || images[0];
+    const coverImageRelPath = `assets/images/${folderName}/${coverImage}`;
 
-    // 1:1 Instagram Post Square Folder Card (No rounded corners, touches each other, name on hover, no photo counts)
+    // 1:1 Instagram Post Square Folder Card (No rounded corners, touches each other, name on hover)
     folderCardsHTML += `
         <div class="insta-folder-card" data-folder="${filterKey}">
             <div class="folder-square-wrapper">
@@ -155,4 +157,4 @@ const galleryPageHTML = `<!DOCTYPE html>
 `;
 
 fs.writeFileSync(path.join(__dirname, 'gallery.html'), galleryPageHTML, 'utf8');
-console.log('Successfully updated build_gallery.js for flush Instagram square folders with name on hover and zero rounded corners!');
+console.log('Successfully updated build_gallery.js and generated gallery.html with updated cover thumbnails!');
