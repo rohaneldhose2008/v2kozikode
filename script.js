@@ -41,13 +41,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
     animatedElements.forEach(el => scrollObserver.observe(el));
 
-    // 3. Photo Lightbox Modal
+    // 3. Terms & Conditions Modal Handler (Droid & Google Sans Fonts)
+    const termsModal = document.getElementById('terms-modal');
+    const termsModalClose = document.getElementById('terms-modal-close');
+    const openTermsBtn = document.getElementById('open-terms-btn');
+
+    if (openTermsBtn && termsModal) {
+        openTermsBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            termsModal.classList.add('active');
+        });
+    }
+
+    if (termsModalClose && termsModal) {
+        termsModalClose.addEventListener('click', () => {
+            termsModal.classList.remove('active');
+        });
+    }
+
+    if (termsModal) {
+        termsModal.addEventListener('click', (e) => {
+            if (e.target === termsModal) {
+                termsModal.classList.remove('active');
+            }
+        });
+    }
+
+    // 4. Photo Lightbox Modal
     const lightboxModal = document.getElementById('lightbox-modal');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxClose = document.getElementById('lightbox-close');
 
     document.addEventListener('click', (e) => {
-        const targetItem = e.target.closest('.gallery-item, .portfolio-item, .masonry-item');
+        const targetItem = e.target.closest('.gallery-item, .portfolio-item, .masonry-item, .folder-photo-item');
         if (targetItem) {
             const fullSrc = targetItem.getAttribute('data-full');
             if (fullSrc && lightboxModal && lightboxImg) {
@@ -71,7 +97,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. Video Player Modal
+    // 5. Instagram Square Folder Cards & Folder View Modals
+    const folderCards = document.querySelectorAll('.insta-folder-card');
+    folderCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const folderKey = card.getAttribute('data-folder');
+            const targetModal = document.getElementById(`folder-modal-${folderKey}`);
+            if (targetModal) {
+                targetModal.classList.add('active');
+            }
+        });
+    });
+
+    const folderCloseBtns = document.querySelectorAll('.btn-close-folder-view');
+    folderCloseBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const folderKey = btn.getAttribute('data-close');
+            const targetModal = document.getElementById(`folder-modal-${folderKey}`);
+            if (targetModal) {
+                targetModal.classList.remove('active');
+            }
+        });
+    });
+
+    const folderViewModals = document.querySelectorAll('.folder-view-modal');
+    folderViewModals.forEach(modal => {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    });
+
+    // 6. Video Player Modal
     const videoModal = document.getElementById('video-modal');
     const videoIframe = document.getElementById('video-modal-iframe');
     const videoClose = document.getElementById('video-modal-close');
@@ -105,29 +163,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. Gallery Tab Filtering
-    const galleryTabs = document.querySelectorAll('.gallery-tab');
-    const masonryItems = document.querySelectorAll('.masonry-item');
-
-    galleryTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            galleryTabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-
-            const filter = tab.getAttribute('data-filter');
-
-            masonryItems.forEach(item => {
-                if (filter === 'all' || item.classList.contains(filter)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        });
-    });
-
     // ==========================================================================
-    // 6. EXACT KOZHIKODE DREAM PACKAGE BUILDER ENGINE
+    // 7. EXACT KOZHIKODE DREAM & SIGNATURE PACKAGE BUILDER ENGINE
     // ==========================================================================
 
     const EVENTS_LIST = [
@@ -150,16 +187,74 @@ document.addEventListener('DOMContentLoaded', () => {
     const dreamModal = document.getElementById('dream-modal');
     const dreamModalClose = document.getElementById('dream-modal-close');
     const openDreamBtns = document.querySelectorAll('.open-dream-modal-btn');
+    const openSignatureBtns = document.querySelectorAll('.open-signature-modal-btn');
     const daysContainer = document.getElementById('days-config-container');
     const addDayBtn = document.getElementById('add-day-btn');
 
     // Render immediately on page load
     renderDreamBuilderUI();
 
+    // Open Signature Package Pre-populated Modal
+    openSignatureBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (dreamModal) {
+                dreamState = {
+                    numDays: 2,
+                    isCustomDays: false,
+                    daysConfig: [
+                        {
+                            id: 1,
+                            events: [
+                                { name: 'Wedding Eve', startTime: '16:00', endTime: '21:00', photographers: 1, cinematographers: 1 }
+                            ]
+                        },
+                        {
+                            id: 2,
+                            events: [
+                                { name: 'Wedding Day', startTime: '09:00', endTime: '16:00', photographers: 1, cinematographers: 1 }
+                            ]
+                        }
+                    ],
+                    retouchedPhotos: 50,
+                    instagramReels: 2,
+                    highlightVideo: '3-6 mins',
+                    albumPages: '40 leaves (80 pages)'
+                };
+
+                const headerTitle = dreamModal.querySelector('.dream-modal-header h2');
+                const headerBadge = dreamModal.querySelector('.badge-tag-gold');
+                if (headerTitle) headerTitle.textContent = 'Checkout Signature Package';
+                if (headerBadge) headerBadge.textContent = 'Signature Package';
+
+                renderDreamBuilderUI();
+                dreamModal.classList.add('active');
+            }
+        });
+    });
+
+    // Open Customizable Dream Package Builder Modal
     openDreamBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             if (dreamModal) {
+                dreamState = {
+                    numDays: 1,
+                    isCustomDays: false,
+                    daysConfig: [
+                        { id: 1, events: [] }
+                    ],
+                    retouchedPhotos: 50,
+                    instagramReels: 2,
+                    highlightVideo: '3-6 mins',
+                    albumPages: '40 leaves (80 pages)'
+                };
+
+                const headerTitle = dreamModal.querySelector('.dream-modal-header h2');
+                const headerBadge = dreamModal.querySelector('.badge-tag-gold');
+                if (headerTitle) headerTitle.textContent = 'Dream Package';
+                if (headerBadge) headerBadge.textContent = 'Fully Custom';
+
                 renderDreamBuilderUI();
                 dreamModal.classList.add('active');
             }
@@ -429,7 +524,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return `*Day ${day.id} Program*\n${eventsList}`;
             }).join('\n\n');
 
-            let payload = `Hello Brown Lights Media! I have customized my Dream Package:\n\n` +
+            let payload = `Hello Brown Lights Media! I have customized my Package:\n\n` +
                 `📅 *Program Schedule & Crew:*\n${scheduleText}\n\n` +
                 `📷 *Custom Output Deliverables:*\n` +
                 `- Edited Photos: ${dreamState.retouchedPhotos} pics\n` +
@@ -443,7 +538,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 7. Contact Form Submission
+    // 8. Contact Form Submission
     const contactForm = document.getElementById('wedding-contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {

@@ -6,8 +6,8 @@ const items = fs.readdirSync(baseDir, { withFileTypes: true });
 
 const folders = items.filter(i => i.isDirectory() && i.name !== 'STRIPEGALLERY');
 
-let categoryTabsHTML = `<button class="gallery-tab active" data-filter="all">All Stories</button>\n`;
-let galleryItemsHTML = '';
+let folderCardsHTML = '';
+let folderModalsHTML = '';
 
 folders.forEach(f => {
     const folderName = f.name;
@@ -16,24 +16,57 @@ folders.forEach(f => {
     
     // Capitalize display name cleanly
     const displayName = folderName.split('&').map(s => s.trim().charAt(0).toUpperCase() + s.trim().slice(1)).join(' & ');
-    categoryTabsHTML += `<button class="gallery-tab" data-filter="${filterKey}">${displayName}</button>\n`;
 
     const images = fs.readdirSync(folderPath).filter(file => /\.(jpg|jpeg|png)$/i.test(file));
 
-    images.forEach(imgFile => {
-        const relPath = `assets/images/${folderName}/${imgFile}`;
-        galleryItemsHTML += `
-        <div class="masonry-item ${filterKey}" data-full="${relPath}">
-            <div class="masonry-img-wrapper">
-                <img src="${relPath}" loading="lazy" alt="${displayName}">
-                <div class="masonry-overlay">
-                    <img src="assets/images/logo.png" alt="Brown Lights Logo" class="overlay-logo-png">
-                    <span class="masonry-tag">${displayName}</span>
-                    <i class="fa-solid fa-expand expand-icon"></i>
+    if (images.length === 0) return;
+
+    const coverImageRelPath = `assets/images/${folderName}/${images[0]}`;
+
+    // 1:1 Instagram Post Square Folder Card
+    folderCardsHTML += `
+        <div class="insta-folder-card" data-folder="${filterKey}">
+            <div class="folder-square-wrapper">
+                <img src="${coverImageRelPath}" loading="lazy" alt="${displayName}" class="folder-cover-img">
+                <div class="folder-card-overlay">
+                    <div class="folder-badge-icon"><i class="fa-solid fa-folder-open"></i></div>
+                    <div class="folder-info">
+                        <h3 class="folder-title">${displayName}</h3>
+                        <span class="folder-count-pill">${images.length} Photos</span>
+                    </div>
                 </div>
             </div>
         </div>\n`;
-    });
+
+    // Folder Modal Grid (Opened when clicking folder card)
+    let imagesGridHTML = images.map(imgFile => {
+        const relPath = `assets/images/${folderName}/${imgFile}`;
+        return `
+            <div class="folder-photo-item" data-full="${relPath}">
+                <img src="${relPath}" loading="lazy" alt="${displayName}">
+                <div class="photo-item-overlay">
+                    <img src="assets/images/logo.png" alt="Brown Lights Logo" class="overlay-logo-png">
+                    <i class="fa-solid fa-expand expand-icon"></i>
+                </div>
+            </div>`;
+    }).join('');
+
+    folderModalsHTML += `
+        <div class="folder-view-modal" id="folder-modal-${filterKey}">
+            <div class="folder-view-container">
+                <div class="folder-view-header">
+                    <div class="folder-title-wrap">
+                        <i class="fa-solid fa-folder-open folder-header-icon"></i>
+                        <h2>${displayName}</h2>
+                        <span class="folder-count-badge">${images.length} Photos</span>
+                    </div>
+                    <button class="btn-close-folder-view" data-close="${filterKey}">&times;</button>
+                </div>
+                <div class="folder-view-grid">
+                    ${imagesGridHTML}
+                </div>
+            </div>
+        </div>\n`;
 });
 
 const galleryPageHTML = `<!DOCTYPE html>
@@ -42,16 +75,16 @@ const galleryPageHTML = `<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery – Brown Lights Media Kozhikode</title>
-    <meta name="description" content="Explore our complete Kozhikode luxury wedding photography collections and couple stories by Brown Lights Media.">
+    <meta name="description" content="Explore Kozhikode luxury wedding photography collections by Brown Lights Media in Instagram folder format.">
     
     <!-- Favicon set to logo.png -->
     <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="shortcut icon" href="assets/images/logo.png">
 
-    <!-- Google Fonts: Bebas Neue (Subheadings) & Open Sans/Google Sans fallback -->
+    <!-- Google Fonts: Bebas Neue, Open/Google Sans, Didot, Droid Sans, Droid Serif -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Droid+Sans:wght@400;700&family=Droid+Serif:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -90,26 +123,24 @@ const galleryPageHTML = `<!DOCTYPE html>
     <!-- Gallery Hero Banner -->
     <section class="gallery-page-hero text-center">
         <div class="container">
-            <span class="section-tag-gold">Portfolio Stories</span>
+            <span class="section-tag-gold">Collections</span>
             <h1 class="gallery-page-title">Brown Lights Media Gallery</h1>
-            <p class="gallery-page-desc">Preserving natural portrait and landscape moments across Kozhikode celebrations.</p>
+            <p class="gallery-page-desc">Select any album folder below to explore full wedding story photos in Instagram post format.</p>
         </div>
     </section>
 
-    <!-- Portfolio Instagram Masonry Gallery -->
+    <!-- Instagram Folder-Wise Gallery Section -->
     <section class="gallery-section">
         <div class="container">
-            <!-- Filter Category Tabs -->
-            <div class="gallery-tabs">
-                ${categoryTabsHTML}
-            </div>
-
-            <!-- Instagram Masonry Layout Grid -->
-            <div class="insta-masonry-grid">
-                ${galleryItemsHTML}
+            <!-- 1:1 Instagram Post Square Shape Folder Grid -->
+            <div class="insta-folders-grid">
+                ${folderCardsHTML}
             </div>
         </div>
     </section>
+
+    <!-- Dynamic Folder Photos View Modals -->
+    ${folderModalsHTML}
 
     <!-- Footer -->
     <footer class="site-footer">
@@ -124,10 +155,11 @@ const galleryPageHTML = `<!DOCTYPE html>
         <img src="" alt="Enlarged photo" class="lightbox-img" id="lightbox-img">
     </div>
 
+    <!-- Script File -->
     <script src="script.js"></script>
 </body>
 </html>
 `;
 
 fs.writeFileSync(path.join(__dirname, 'gallery.html'), galleryPageHTML, 'utf8');
-console.log('Updated build_gallery.js for fixed floating big logo & logo favicon!');
+console.log('Successfully generated gallery.html with Instagram square folder cards!');
