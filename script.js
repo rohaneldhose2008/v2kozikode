@@ -224,8 +224,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const headerTitle = dreamModal.querySelector('.dream-modal-header h2');
                 const headerBadge = dreamModal.querySelector('.badge-tag-gold');
+                const submitBtnText = dreamModal.querySelector('#builder-submit-btn-text');
                 if (headerTitle) headerTitle.textContent = 'Checkout Signature Package';
                 if (headerBadge) headerBadge.textContent = 'Signature Package';
+                if (submitBtnText) submitBtnText.textContent = 'Checkout Signature Package';
 
                 renderDreamBuilderUI();
                 dreamModal.classList.add('active');
@@ -252,8 +254,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const headerTitle = dreamModal.querySelector('.dream-modal-header h2');
                 const headerBadge = dreamModal.querySelector('.badge-tag-gold');
+                const submitBtnText = dreamModal.querySelector('#builder-submit-btn-text');
                 if (headerTitle) headerTitle.textContent = 'Dream Package';
                 if (headerBadge) headerBadge.textContent = 'Fully Custom';
+                if (submitBtnText) submitBtnText.textContent = 'Checkout Dream Package';
 
                 renderDreamBuilderUI();
                 dreamModal.classList.add('active');
