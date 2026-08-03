@@ -186,6 +186,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const dreamModal = document.getElementById('dream-modal');
     const dreamModalClose = document.getElementById('dream-modal-close');
+    const signatureModal = document.getElementById('signature-modal');
+    const signatureModalClose = document.getElementById('signature-modal-close');
+    const submitSignatureBtn = document.getElementById('submit-signature-checkout-btn');
     const openDreamBtns = document.querySelectorAll('.open-dream-modal-btn');
     const openSignatureBtns = document.querySelectorAll('.open-signature-modal-btn');
     const daysContainer = document.getElementById('days-config-container');
@@ -194,46 +197,54 @@ document.addEventListener('DOMContentLoaded', () => {
     // Render immediately on page load
     renderDreamBuilderUI();
 
-    // Open Signature Package Pre-populated Modal
+    // Open Dedicated Signature Package Modal
     openSignatureBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
-            if (dreamModal) {
-                dreamState = {
-                    numDays: 2,
-                    isCustomDays: false,
-                    daysConfig: [
-                        {
-                            id: 1,
-                            events: [
-                                { name: 'Wedding Eve', startTime: '16:00', endTime: '21:00', photographers: 1, cinematographers: 1 }
-                            ]
-                        },
-                        {
-                            id: 2,
-                            events: [
-                                { name: 'Wedding Day', startTime: '09:00', endTime: '16:00', photographers: 1, cinematographers: 1 }
-                            ]
-                        }
-                    ],
-                    retouchedPhotos: 50,
-                    instagramReels: 2,
-                    highlightVideo: '3-6 mins',
-                    albumPages: '40 leaves (80 pages)'
-                };
-
-                const headerTitle = dreamModal.querySelector('.dream-modal-header h2');
-                const headerBadge = dreamModal.querySelector('.badge-tag-gold');
-                const submitBtnText = dreamModal.querySelector('#builder-submit-btn-text');
-                if (headerTitle) headerTitle.textContent = 'Checkout Signature Package';
-                if (headerBadge) headerBadge.textContent = 'Signature Package';
-                if (submitBtnText) submitBtnText.textContent = 'Checkout Signature Package';
-
-                renderDreamBuilderUI();
-                dreamModal.classList.add('active');
+            if (signatureModal) {
+                signatureModal.classList.add('active');
             }
         });
     });
+
+    if (signatureModalClose && signatureModal) {
+        signatureModalClose.addEventListener('click', () => {
+            signatureModal.classList.remove('active');
+        });
+    }
+
+    if (signatureModal) {
+        signatureModal.addEventListener('click', (e) => {
+            if (e.target === signatureModal) {
+                signatureModal.classList.remove('active');
+            }
+        });
+    }
+
+    // Submit Signature Package Checkout to WhatsApp
+    if (submitSignatureBtn) {
+        submitSignatureBtn.addEventListener('click', () => {
+            const customNotes = document.getElementById('signature-custom-notes')?.value.trim() || 'None';
+
+            let payload = `Hello Brown Lights Media! I want to checkout the Signature Package:\n\n` +
+                `📌 *Package Coverage:* FOR BOTH SIDES (BRIDE & GROOM)\n\n` +
+                `👥 *The Crew:* \n` +
+                `  • Wedding Eve: 1 Lead Candid Photographer, 1 Lead Candid Cinematographer\n` +
+                `  • Wedding Day: 1 Lead Candid Photographer, 1 Lead Candid Cinematographer\n\n` +
+                `📷 *Deliverables:*\n` +
+                `  • Edited photos (up to 50 pics)\n` +
+                `  • Soft Copies (USB & Google Drive)\n` +
+                `  • Instagram film video x 2\n` +
+                `  • Wedding highlight video (3-6 minutes)\n` +
+                `  • Album 40 leaves (80 pages)\n` +
+                `  • + Complimentary: Mini album, Signature online album, Table calendar, Photo frame\n\n` +
+                `📝 *Custom Requests / Notes / Questions:*\n${customNotes}`;
+
+            const encoded = encodeURIComponent(payload);
+            window.open(`https://wa.me/919746558773?text=${encoded}`, '_blank');
+            if (signatureModal) signatureModal.classList.remove('active');
+        });
+    }
 
     // Open Customizable Dream Package Builder Modal
     openDreamBtns.forEach(btn => {

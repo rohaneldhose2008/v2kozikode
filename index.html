@@ -251,69 +251,53 @@
                 <p class="packages-subtitle">Let's talk about your wedding and create an unforgettable experience.</p>
             </div>
 
-            <div class="packages-grid">
-                <!-- Signature Package Card -->
-                <div class="package-card signature-card animate-on-scroll">
+            <div class="packages-single-wrapper">
+                <!-- Signature Package Card (Centralized Box) -->
+                <div class="package-card signature-card single-package-card animate-on-scroll">
                     <div class="package-header">
-                        <span class="badge-tag">Premium</span>
-                        <h3 class="package-card-title">Signature</h3>
+                        <span class="badge-tag badge-tag-black">PREMIUM</span>
+                        <h3 class="package-card-title">SIGNATURE</h3>
                         <p class="package-card-desc">Our exclusive, expertly curated wedding experience.</p>
+
+                        <!-- Highlighted Both Sides Badge -->
+                        <div class="both-sides-highlight-badge">
+                            PACKAGE COVERAGE: FOR BOTH SIDES (BRIDE & GROOM)
+                        </div>
                     </div>
 
                     <div class="package-section">
-                        <h4><i class="fa-solid fa-camera"></i> The Crew</h4>
+                        <h4>THE CREW</h4>
                         <div class="crew-details">
                             <div class="crew-day">
                                 <h5>Wedding Eve</h5>
                                 <ul>
-                                    <li><i class="fa-solid fa-check-circle"></i> 1 Lead Candid Photographer</li>
-                                    <li><i class="fa-solid fa-check-circle"></i> 1 Lead Candid Cinematographer</li>
+                                    <li><i class="fa-solid fa-check-circle black-check"></i> 1 Lead Candid Photographer</li>
+                                    <li><i class="fa-solid fa-check-circle black-check"></i> 1 Lead Candid Cinematographer</li>
                                 </ul>
                             </div>
                             <div class="crew-day">
                                 <h5>Wedding Day</h5>
                                 <ul>
-                                    <li><i class="fa-solid fa-check-circle"></i> 1 Lead Candid Photographer</li>
-                                    <li><i class="fa-solid fa-check-circle"></i> 1 Lead Candid Cinematographer</li>
+                                    <li><i class="fa-solid fa-check-circle black-check"></i> 1 Lead Candid Photographer</li>
+                                    <li><i class="fa-solid fa-check-circle black-check"></i> 1 Lead Candid Cinematographer</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
                     <div class="package-section">
-                        <h4><i class="fa-solid fa-film"></i> Deliverables</h4>
+                        <h4>DELIVERABLES</h4>
                         <ul class="deliverables-list">
-                            <li><i class="fa-solid fa-check-circle"></i> Edited photos (up to 50 pics)</li>
-                            <li><i class="fa-solid fa-check-circle"></i> Soft Copies (USB & Google Drive)</li>
-                            <li><i class="fa-solid fa-check-circle"></i> Instagram film video x 2</li>
-                            <li><i class="fa-solid fa-check-circle"></i> Wedding highlight video (3-6 minutes)</li>
-                            <li><i class="fa-solid fa-check-circle"></i> Album 40 leaves (80 pages)</li>
-                            <li class="complimentary-item"><i class="fa-solid fa-gift"></i> + Complimentary: Mini album, Signature online album, Table calendar, Photo frame</li>
+                            <li><i class="fa-solid fa-check-circle black-check"></i> Edited photos (up to 50 pics)</li>
+                            <li><i class="fa-solid fa-check-circle black-check"></i> Soft Copies (USB & Google Drive)</li>
+                            <li><i class="fa-solid fa-check-circle black-check"></i> Instagram film video x 2</li>
+                            <li><i class="fa-solid fa-check-circle black-check"></i> Wedding highlight video (3-6 minutes)</li>
+                            <li><i class="fa-solid fa-check-circle black-check"></i> Album 40 leaves (80 pages)</li>
+                            <li class="complimentary-item black-text"><i class="fa-solid fa-gift black-gift"></i> + Complimentary: Mini album, Signature online album, Table calendar, Photo frame</li>
                         </ul>
                     </div>
 
-                    <button class="btn-package btn-gold-fill open-signature-modal-btn">Checkout Signature</button>
-                </div>
-
-                <!-- Dream Package Card -->
-                <div class="package-card dream-card animate-on-scroll">
-                    <div class="package-header">
-                        <span class="badge-tag">Fully Custom</span>
-                        <h3 class="package-card-title">Dream Package</h3>
-                        <p class="package-card-desc">Build your perfect wedding experience from the ground up.</p>
-                    </div>
-
-                    <div class="package-highlights-box">
-                        <h4>Package Highlights</h4>
-                        <ul>
-                            <li><i class="fa-regular fa-calendar-check"></i> Choose exactly how many days your program lasts.</li>
-                            <li><i class="fa-regular fa-clock"></i> Select specific events and set custom start and end timings.</li>
-                            <li><i class="fa-solid fa-users"></i> Pick the exact number of Photographers and Cinematographers per event.</li>
-                            <li><i class="fa-solid fa-film"></i> Fully customize your final output deliverables.</li>
-                        </ul>
-                    </div>
-
-                    <button class="btn-package btn-gold-outline open-dream-modal-btn">Build Your Dream Package</button>
+                    <button class="btn-package btn-black-fill open-signature-modal-btn">Checkout Signature</button>
                 </div>
             </div>
         </div>
@@ -609,6 +593,64 @@
         <button class="video-modal-close" id="video-modal-close" aria-label="Close video">&times;</button>
         <div class="video-modal-container">
             <iframe id="video-modal-iframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- DEDICATED SIGNATURE PACKAGE CHECKOUT MODAL -->
+    <div class="dream-modal signature-modal-popup" id="signature-modal">
+        <div class="dream-modal-content">
+            <button class="dream-modal-close" id="signature-modal-close">&times;</button>
+            
+            <div class="dream-modal-header text-center">
+                <span class="badge-tag-black">PREMIUM</span>
+                <h2>CHECKOUT SIGNATURE PACKAGE</h2>
+                <p>Our exclusive, expertly curated wedding experience.</p>
+            </div>
+
+            <div class="signature-modal-body">
+                <!-- Highlighted Both Sides Banner -->
+                <div class="both-sides-highlight-badge" style="margin-bottom: 1.5rem;">
+                    PACKAGE COVERAGE: FOR BOTH SIDES (BRIDE & GROOM)
+                </div>
+
+                <!-- Fixed Inclusions Explanations (No Icons) -->
+                <div class="signature-inclusions-box">
+                    <div class="inc-group">
+                        <h4 style="font-family: var(--font-heading) !important; text-transform: uppercase !important; letter-spacing: -0.05em !important; font-size: 1.1rem; margin-bottom: 0.5rem; color: #111;">THE CREW</h4>
+                        <div class="inc-row" style="margin-bottom: 0.4rem; font-size: 0.95rem;">
+                            <strong>Wedding Eve:</strong> 1 Lead Candid Photographer, 1 Lead Candid Cinematographer
+                        </div>
+                        <div class="inc-row" style="margin-bottom: 1rem; font-size: 0.95rem;">
+                            <strong>Wedding Day:</strong> 1 Lead Candid Photographer, 1 Lead Candid Cinematographer
+                        </div>
+                    </div>
+
+                    <div class="inc-group">
+                        <h4 style="font-family: var(--font-heading) !important; text-transform: uppercase !important; letter-spacing: -0.05em !important; font-size: 1.1rem; margin-bottom: 0.5rem; color: #111;">DELIVERABLES</h4>
+                        <ul class="inc-list" style="list-style: none; padding-left: 0; margin-left: 0; font-size: 0.95rem; line-height: 1.7;">
+                            <li>• Edited photos (up to 50 pics)</li>
+                            <li>• Soft Copies (USB & Google Drive)</li>
+                            <li>• Instagram film video x 2</li>
+                            <li>• Wedding highlight video (3-6 minutes)</li>
+                            <li>• Album 40 leaves (80 pages)</li>
+                            <li style="font-weight: 600; color: #111;">• + Complimentary: Mini album, Signature online album, Table calendar, Photo frame</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Custom Typeable Request Box -->
+                <div class="custom-requests-box" style="margin-top: 1.5rem;">
+                    <label for="signature-custom-notes" style="display: block; font-weight: 700; font-size: 0.88rem; color: #111; margin-bottom: 0.3rem;">ADD CUSTOM REQUESTS OR QUESTIONS (OPTIONAL)</label>
+                    <p style="font-size: 0.82rem; color: #666; margin-bottom: 0.5rem;">Want to add extra days/events, custom requirements, or ask questions? Type below:</p>
+                    <textarea id="signature-custom-notes" rows="3" placeholder="Type your custom requirements, extra events, or questions here..." style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 4px; font-family: var(--font-body); font-size: 0.9rem; resize: vertical;"></textarea>
+                </div>
+
+                <div class="builder-submit-box" style="margin-top: 1.5rem;">
+                    <button type="button" id="submit-signature-checkout-btn" class="btn-package btn-black-fill" style="padding:1.2rem; font-size:0.95rem; width:100%;">
+                        <i class="fa-solid fa-bag-shopping"></i> Checkout Signature Package
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 

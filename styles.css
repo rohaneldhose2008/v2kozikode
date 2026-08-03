@@ -77,21 +77,21 @@ button {
     text-align: center;
 }
 
-/* Headings Typography - Didot Regular & Cinzel with Natural Casing & Default Word Spacing */
-h1, h2, h3, h4, h5, h6, .hero-title, .about-title, .packages-main-title, .showcase-title, .cta-title, .contact-title, .gallery-page-title {
+/* Headings Typography - Didot Regular & Cinzel in ALL CAPS with -0.05em Letter Spacing */
+h1, h2, h3, h4, h5, h6, .hero-title, .about-title, .packages-main-title, .showcase-title, .cta-title, .contact-title, .gallery-page-title, .terms-main-title {
     font-family: var(--font-heading) !important;
     font-weight: 400 !important;
-    letter-spacing: normal !important;
+    letter-spacing: -0.05em !important;
     word-spacing: normal !important;
-    text-transform: none !important; /* Preserves exact natural sentence/title case across mobile & desktop */
+    text-transform: uppercase !important; /* All Didot headings in CAPS */
 }
 
-h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge-tag-gold, .reel-tag, .info-label, .masonry-tag {
+h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge-tag-gold, .badge-tag-black, .reel-tag, .info-label, .masonry-tag {
     font-family: var(--font-subheading) !important;
     font-weight: 400 !important;
-    letter-spacing: 0.05em;
+    letter-spacing: -0.02em;
     word-spacing: normal !important;
-    text-transform: none !important;
+    text-transform: uppercase !important;
 }
 
 /* Fixed Floating Big Pure PNG Signature Logo (Floats everywhere as you scroll down) */
@@ -1998,4 +1998,102 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     .folder-photo-item {
         min-height: 160px;
     }
+}
+
+/* ==========================================================================
+   CENTRALIZED SIGNATURE PACKAGE CARD & BLACK STYLING (Single Package)
+   ========================================================================== */
+
+.packages-single-wrapper {
+    max-width: 820px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.single-package-card {
+    width: 100%;
+    margin: 0 auto;
+    border: 2px solid #111111 !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.badge-tag-black {
+    background: #111111 !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+.both-sides-highlight-badge {
+    background: #111111;
+    color: #ffffff;
+    font-family: var(--font-subheading) !important;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.75rem 1rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    text-transform: uppercase !important;
+}
+
+.black-check, .black-gift {
+    color: #111111 !important;
+}
+
+.black-text {
+    color: #111111 !important;
+    font-weight: 600;
+}
+
+.btn-black-fill {
+    background: #111111 !important;
+    color: #ffffff !important;
+    border: 1px solid #111111 !important;
+    transition: var(--transition-smooth);
+}
+
+.btn-black-fill:hover {
+    background: #333333 !important;
+    color: #ffffff !important;
+}
+
+/* Single Left Flush Alignment ("Negative Alignment" / Clean Vertical Left Edge) */
+.single-package-card .package-section h4 {
+    text-align: left;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.single-package-card .crew-details,
+.single-package-card .deliverables-list {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+.single-package-card .crew-day ul,
+.single-package-card .deliverables-list {
+    list-style: none;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+.single-package-card .crew-day ul li,
+.single-package-card .deliverables-list li {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    text-align: left;
+}
+
+/* Signature Modal Popup Specifics */
+.signature-modal-popup .signature-inclusions-box {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 1rem;
+}
+
+.signature-modal-popup .inc-group h4 {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.4rem;
 }
