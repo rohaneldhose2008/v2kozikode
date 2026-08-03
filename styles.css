@@ -18,8 +18,8 @@
     --accent-gold-hover: #b08d46;
     --border-light: #E2E2E2;
 
-    /* Requested Font Stack: Didot Regular, Cinzel, Droid Sans, Google Sans */
-    --font-heading: 'Didot', 'Bodoni MT', 'Cinzel', serif;
+    /* Requested Font Stack: Didot Regular (GFS Didot Web Font), Bodoni Moda, Cinzel, Droid Sans, Google Sans */
+    --font-heading: 'GFS Didot', 'Didot', 'Bodoni Moda', 'Cinzel', serif;
     --font-subheading: 'Cinzel', 'Bodoni MT', serif;
     --font-body: 'Open Sans', 'Google Sans', 'Product Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-droid: 'Droid Sans', 'Droid Serif', serif;
