@@ -2097,3 +2097,161 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     border-bottom: 1px solid #ddd;
     padding-bottom: 0.4rem;
 }
+
+/* ==========================================================================
+   LUXURY DARK PACKAGES BANNER SECTION (Matching Pic 1 & Pic 2)
+   ========================================================================== */
+
+.packages-dark-section {
+    position: relative;
+    padding: 7rem 0;
+    background: #0d0b0a;
+    overflow: hidden;
+}
+
+.packages-bg-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.packages-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.85);
+}
+
+.packages-dark-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(10, 8, 7, 0.95) 0%, rgba(10, 8, 7, 0.88) 55%, rgba(10, 8, 7, 0.65) 100%);
+}
+
+.packages-content-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+}
+
+.packages-dark-layout {
+    max-width: 650px;
+    color: #ffffff;
+}
+
+.your-story-script {
+    font-family: 'Great Vibes', cursive !important;
+    color: var(--accent-gold);
+    font-size: 3.5rem !important;
+    margin-top: -0.8rem;
+    margin-bottom: 1rem;
+    display: block;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    line-height: 1;
+}
+
+.gold-ornament-line {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--accent-gold);
+    font-size: 0.8rem;
+    margin-top: 0.4rem;
+    margin-bottom: 1.2rem;
+}
+
+.gold-ornament-line::before {
+    content: "━━━ ❖ ━━━";
+    background: transparent;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    width: auto;
+}
+
+.crew-split-flex {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.crew-split-col {
+    flex: 1;
+}
+
+.crew-divider-line {
+    width: 1px;
+    align-self: stretch;
+    background: rgba(197, 160, 89, 0.35);
+}
+
+.gold-check-icon {
+    color: var(--accent-gold) !important;
+    margin-right: 0.4rem;
+}
+
+.packages-dark-layout ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.packages-dark-layout ul li {
+    font-size: 0.93rem;
+    color: #e0e0e0;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.complimentary-dashed-row {
+    border-top: 1px dashed rgba(197, 160, 89, 0.4);
+    padding-top: 1rem;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+.btn-gold-outline-dark {
+    border: 1px solid var(--accent-gold) !important;
+    color: #ffffff !important;
+    background: transparent !important;
+    padding: 0.9rem 2.2rem;
+    font-family: var(--font-subheading) !important;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase !important;
+    transition: var(--transition-smooth);
+    margin-top: 1.75rem;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn-gold-outline-dark:hover {
+    background: var(--accent-gold) !important;
+    color: #000000 !important;
+}
+
+@media (max-width: 768px) {
+    .packages-dark-overlay {
+        background: rgba(10, 8, 7, 0.92);
+    }
+    .packages-content-container {
+        padding: 0 1.5rem;
+    }
+    .your-story-script {
+        font-size: 2.8rem !important;
+    }
+    .crew-split-flex {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .crew-divider-line {
+        display: none;
+    }
+}
