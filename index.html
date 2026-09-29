@@ -25,7 +25,7 @@
 
     <!-- Fixed Floating Big Pure PNG Signature Logo -->
     <a href="#home" class="floating-brand-logo" title="Brown Lights Media Home">
-        <img src="assets/images/logo.png" alt="Brown Lights Media Logo">
+        <img src="assets/images/logo.png" alt="Brown Lights Media Logo" fetchpriority="high" decoding="async">
     </a>
 
     <!-- Fixed Navigation Header -->
@@ -54,9 +54,9 @@
 
     <!-- Hero Section (Full 100vh Native Video Loop) -->
     <section class="hero-section" id="home">
-        <!-- Background Native Video Loop -->
+        <!-- Background Native Video Loop with Poster Fallback -->
         <div class="hero-video-wrapper">
-            <video autoplay loop muted playsinline class="hero-video-native">
+            <video autoplay loop muted playsinline preload="auto" poster="assets/images/STRIPEGALLERY/DSC06086.jpg" class="hero-video-native">
                 <source src="assets/images/hero-bg-compressed.mp4" type="video/mp4">
             </video>
             <div class="hero-overlay"></div>

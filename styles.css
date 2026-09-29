@@ -2255,3 +2255,16 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
         display: none;
     }
 }
+
+/* ==========================================================================
+   PERFORMANCE OPTIMIZATIONS (Instant Rendering & Offscreen Speedup)
+   ========================================================================== */
+
+.about-section,
+.video-showcase-section,
+.cta-banner-section,
+.packages-dark-section,
+.contact-section {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 800px;
+}
