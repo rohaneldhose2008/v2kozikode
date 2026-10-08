@@ -77,11 +77,11 @@ button {
     text-align: center;
 }
 
-/* Headings Typography - Didot Regular & Cinzel in ALL CAPS with -0.05em Letter Spacing */
-h1, h2, h3, h4, h5, h6, .hero-title, .about-title, .packages-main-title, .showcase-title, .cta-title, .contact-title, .gallery-page-title, .terms-main-title {
+/* Headings Typography - Didot Regular & Cinzel in ALL CAPS */
+h1, h2, h3, h4, h5, h6, .about-title, .packages-main-title, .showcase-title, .cta-title, .contact-title, .gallery-page-title, .terms-main-title {
     font-family: var(--font-heading) !important;
     font-weight: 400 !important;
-    letter-spacing: -0.05em !important;
+    letter-spacing: -0.02em !important;
     word-spacing: normal !important;
     text-transform: uppercase !important; /* All Didot headings in CAPS */
 }
@@ -259,7 +259,7 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     font-weight: 400;
     line-height: 1.15;
     color: var(--text-white);
-    letter-spacing: normal !important;
+    letter-spacing: -0.05em !important; /* Controlled specifically for Hero Title */
     word-spacing: normal !important;
     text-transform: none !important;
 }
@@ -289,6 +289,25 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     overflow: hidden;
+}
+
+/* Separate Strip Gallery Display Controls for Web and Mobile */
+.desktop-strip-gallery {
+    display: grid !important;
+}
+
+.mobile-strip-gallery {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .desktop-strip-gallery {
+        display: none !important;
+    }
+    .mobile-strip-gallery {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
 }
 
 .gallery-item {
