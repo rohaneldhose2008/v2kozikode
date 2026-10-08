@@ -246,31 +246,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Open Customizable Dream Package Builder Modal
+    // Open Start Your Planning / Client Details Modal
     openDreamBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             if (dreamModal) {
-                dreamState = {
-                    numDays: 1,
-                    isCustomDays: false,
-                    daysConfig: [
-                        { id: 1, events: [] }
-                    ],
-                    retouchedPhotos: 50,
-                    instagramReels: 2,
-                    highlightVideo: '3-6 mins',
-                    albumPages: '40 leaves (80 pages)'
-                };
-
-                const headerTitle = dreamModal.querySelector('.dream-modal-header h2');
-                const headerBadge = dreamModal.querySelector('.badge-tag-gold');
-                const submitBtnText = dreamModal.querySelector('#builder-submit-btn-text');
-                if (headerTitle) headerTitle.textContent = 'Dream Package';
-                if (headerBadge) headerBadge.textContent = 'Fully Custom';
-                if (submitBtnText) submitBtnText.textContent = 'Checkout Dream Package';
-
-                renderDreamBuilderUI();
                 dreamModal.classList.add('active');
             }
         });
@@ -526,30 +506,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const dreamForm = document.getElementById('dream-builder-form');
-    if (dreamForm) {
-        dreamForm.addEventListener('submit', (e) => {
+    const planningForm = document.getElementById('planning-details-form');
+    if (planningForm) {
+        planningForm.addEventListener('submit', (e) => {
             e.preventDefault();
+            const clientName = document.getElementById('plan-client-name')?.value.trim() || 'N/A';
+            const whatsapp = document.getElementById('plan-whatsapp')?.value.trim() || 'N/A';
+            const weddingDate = document.getElementById('plan-wedding-date')?.value || 'N/A';
+            const coverage = planningForm.querySelector('input[name="wedding_coverage"]:checked')?.value || 'N/A';
+            const venue = document.getElementById('plan-venue')?.value.trim() || 'Not specified';
+            const guestCount = planningForm.querySelector('input[name="guest_count"]:checked')?.value || 'N/A';
+            const extraPhotographer = planningForm.querySelector('input[name="extra_photographer"]:checked')?.value || 'N/A';
+            const services = planningForm.querySelector('input[name="services_wanted"]:checked')?.value || 'N/A';
+            
+            const outputsChecked = Array.from(planningForm.querySelectorAll('input[name="outputs_wanted"]:checked')).map(cb => cb.value);
+            const outputs = outputsChecked.length > 0 ? outputsChecked.join(', ') : 'None selected';
+            
+            const budget = planningForm.querySelector('input[name="budget_range"]:checked')?.value || 'N/A';
 
-            let scheduleText = dreamState.daysConfig.map(day => {
-                if (day.events.length === 0) return `*Day ${day.id}*: No events selected`;
-                const eventsList = day.events.map(ev => 
-                    `  • ${ev.name} (${ev.startTime || '09:00'} - ${ev.endTime || '13:00'})\n    Crew: ${ev.photographers} Photographers, ${ev.cinematographers} Cinematographers`
-                ).join('\n');
-                return `*Day ${day.id} Program*\n${eventsList}`;
-            }).join('\n\n');
-
-            let payload = `Hello Brown Lights Media! I have customized my Package:\n\n` +
-                `📅 *Program Schedule & Crew:*\n${scheduleText}\n\n` +
-                `📷 *Custom Output Deliverables:*\n` +
-                `- Edited Photos: ${dreamState.retouchedPhotos} pics\n` +
-                `- Instagram Reels: ${dreamState.instagramReels}x\n` +
-                `- Highlight Video: ${dreamState.highlightVideo}\n` +
-                `- Album: ${dreamState.albumPages}`;
+            let payload = `Hello Brown Lights Media! 🤍 Here are my Wedding Client Details:\n\n` +
+                `👤 *Client Name:* ${clientName}\n` +
+                `📱 *WhatsApp Number:* ${whatsapp}\n` +
+                `📅 *Wedding Date:* ${weddingDate}\n` +
+                `👰 *Wedding Coverage:* ${coverage}\n` +
+                `📍 *Programme Venue:* ${venue}\n` +
+                `👥 *Expected Guests:* ${guestCount}\n` +
+                `📸 *Extra Photographer (>1000 guests):* ${extraPhotographer}\n` +
+                `🎥 *Services Desired:* ${services}\n` +
+                `🎞️ *Outputs Wanted:* ${outputs}\n` +
+                `💰 *Approximate Budget:* ${budget}\n\n` +
+                `Thank you for sharing your details! We will get back to you shortly.`;
 
             const encoded = encodeURIComponent(payload);
             window.open(`https://wa.me/919746558773?text=${encoded}`, '_blank');
-            dreamModal.classList.remove('active');
+            if (dreamModal) dreamModal.classList.remove('active');
         });
     }
 

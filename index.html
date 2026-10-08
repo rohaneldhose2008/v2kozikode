@@ -590,86 +590,183 @@
         </div>
     </footer>
 
-    <!-- EXACT KOZHIKODE DREAM PACKAGE BUILDER MODAL POPUP -->
+    <!-- START YOUR PLANNING / GOOGLE FORM CLIENT DETAILS MODAL POPUP -->
     <div class="dream-modal" id="dream-modal">
         <div class="dream-modal-content">
             <button class="dream-modal-close" id="dream-modal-close">&times;</button>
             
             <div class="dream-modal-header text-center">
-                <span class="badge-tag-gold">Fully Custom</span>
-                <h2>Dream Package</h2>
-                <p>Build your perfect wedding experience from the ground up.</p>
+                <span class="badge-tag-gold">Start Your Planning</span>
+                <h2>BLM – Wedding Client Details Form</h2>
+                <p>Thank you for choosing BLM to capture your special moments. 🤍<br>Please fill in the details below so we can better understand your wedding plans, coverage requirements, and preferences.</p>
             </div>
 
-            <form id="dream-builder-form" class="dream-builder-form">
-                
-                <!-- STEP 1: Program Duration -->
+            <form id="planning-details-form" class="dream-builder-form">
+                <!-- Question 1: Client Name -->
                 <div class="builder-step-card">
-                    <h3><i class="fa-regular fa-calendar-days"></i> 1. Program Duration</h3>
-                    <label style="display:block; font-size:0.88rem; color:#555; margin-bottom:0.75rem;">How many days is the program?</label>
-                    <div class="days-flex-grid">
-                        <button type="button" class="btn-day-pill active" data-days="1">1 Day</button>
-                        <button type="button" class="btn-day-pill" data-days="2">2 Days</button>
-                        <button type="button" class="btn-day-pill" data-days="3">3 Days</button>
-                        <button type="button" class="btn-day-pill" data-days="4">4 Days</button>
-                        <button type="button" class="btn-day-pill" data-days="more">More than 4 days</button>
+                    <label for="plan-client-name" class="form-question-label">Client Name *</label>
+                    <input type="text" name="client_name" id="plan-client-name" class="planning-input" placeholder="Your Full Name" required>
+                </div>
+
+                <!-- Question 2: WhatsApp Number -->
+                <div class="builder-step-card">
+                    <label for="plan-whatsapp" class="form-question-label">WhatsApp Number *</label>
+                    <input type="tel" name="whatsapp_number" id="plan-whatsapp" class="planning-input" placeholder="e.g. +91 97465 58773" required>
+                </div>
+
+                <!-- Question 3: Wedding Date -->
+                <div class="builder-step-card">
+                    <label for="plan-wedding-date" class="form-question-label">Wedding Date *</label>
+                    <input type="date" name="wedding_date" id="plan-wedding-date" class="planning-input" required>
+                </div>
+
+                <!-- Question 4: Wedding Coverage -->
+                <div class="builder-step-card">
+                    <label class="form-question-label">Wedding Coverage *</label>
+                    <div class="planning-radio-group">
+                        <label class="radio-option-card">
+                            <input type="radio" name="wedding_coverage" value="Both Bride & Groom sides" checked>
+                            <span>Both Bride & Groom sides</span>
+                        </label>
+                        <label class="radio-option-card">
+                            <input type="radio" name="wedding_coverage" value="Bride side only">
+                            <span>Bride side only</span>
+                        </label>
+                        <label class="radio-option-card">
+                            <input type="radio" name="wedding_coverage" value="Groom side only">
+                            <span>Groom side only</span>
+                        </label>
                     </div>
                 </div>
 
-                <!-- STEP 2 & 3: Dynamic Schedule & Events Container -->
+                <!-- Question 5: Programme Venue -->
                 <div class="builder-step-card">
-                    <h3><i class="fa-regular fa-clock"></i> 2. Schedule & Crew Selection</h3>
-                    
-                    <div id="days-config-container"></div>
-
-                    <button type="button" id="add-day-btn" class="btn-package btn-gold-outline" style="display:none; margin-top:1rem;">
-                        <i class="fa-solid fa-plus"></i> Add Extra Day
-                    </button>
+                    <label for="plan-venue" class="form-question-label">Programme Venue</label>
+                    <input type="text" name="programme_venue" id="plan-venue" class="planning-input" placeholder="e.g. Kozhikode / Resort / Convention Center">
                 </div>
 
-                <!-- STEP 4: Customizable Output Deliverables -->
+                <!-- Question 6: Expected Number of Guests -->
                 <div class="builder-step-card">
-                    <h3><i class="fa-solid fa-film"></i> 3. Customizable Output</h3>
-                    
-                    <div style="margin-bottom:1.5rem;">
-                        <label style="display:block; font-size:0.88rem; color:#555; margin-bottom:0.5rem;">Edited Photos (up to)</label>
-                        <div class="pills-grid">
-                            <button type="button" class="btn-pill-opt photos-opt active" data-val="50">50 pics</button>
-                            <button type="button" class="btn-pill-opt photos-opt" data-val="80">80 pics</button>
-                            <button type="button" class="btn-pill-opt photos-opt" data-val="100">100 pics</button>
-                        </div>
+                    <label class="form-question-label">Expected Number of Guests</label>
+                    <div class="planning-radio-group">
+                        <label class="radio-option-card">
+                            <input type="radio" name="guest_count" value="Under 500" checked>
+                            <span>Under 500</span>
+                        </label>
+                        <label class="radio-option-card">
+                            <input type="radio" name="guest_count" value="500–1,000">
+                            <span>500–1,000</span>
+                        </label>
+                        <label class="radio-option-card">
+                            <input type="radio" name="guest_count" value="1,000–2,000">
+                            <span>1,000–2,000</span>
+                        </label>
+                        <label class="radio-option-card">
+                            <input type="radio" name="guest_count" value="2,000+">
+                            <span>2,000+</span>
+                        </label>
                     </div>
+                </div>
 
-                    <div style="margin-bottom:1.5rem;">
-                        <label style="display:block; font-size:0.88rem; color:#555; margin-bottom:0.5rem;">Instagram Film Videos</label>
-                        <div style="display:flex; align-items:center; gap:1rem;">
-                            <button type="button" class="counter-btn-mini" id="reels-dec" style="width:36px; height:36px;">-</button>
-                            <span id="reels-count" style="font-size:1.2rem; font-weight:600; width:30px; text-align:center;">2</span>
-                            <button type="button" class="counter-btn-mini" id="reels-inc" style="width:36px; height:36px;">+</button>
-                        </div>
+                <!-- Question 7: Extra Photographer for >1000 guests -->
+                <div class="builder-step-card">
+                    <label class="form-question-label">If you expect more than 1,000 guests, would you like an additional photographer for better coverage?</label>
+                    <div class="planning-radio-group">
+                        <label class="radio-option-card">
+                            <input type="radio" name="extra_photographer" value="Yes">
+                            <span>Yes</span>
+                        </label>
+                        <label class="radio-option-card">
+                            <input type="radio" name="extra_photographer" value="No">
+                            <span>No</span>
+                        </label>
+                        <label class="radio-option-card">
+                            <input type="radio" name="extra_photographer" value="Not sure yet" checked>
+                            <span>Not sure yet</span>
+                        </label>
                     </div>
+                </div>
 
-                    <div style="margin-bottom:1.5rem;">
-                        <label style="display:block; font-size:0.88rem; color:#555; margin-bottom:0.5rem;">Wedding Highlight Video</label>
-                        <div class="pills-grid">
-                            <button type="button" class="btn-pill-opt highlight-opt active" data-val="3-6 mins">3–6 mins</button>
-                            <button type="button" class="btn-pill-opt highlight-opt" data-val="6-8 mins">6–8 mins</button>
-                        </div>
+                <!-- Question 8: Which services would you like? -->
+                <div class="builder-step-card">
+                    <label class="form-question-label">Which services would you like?</label>
+                    <div class="planning-radio-group">
+                        <label class="radio-option-card">
+                            <input type="radio" name="services_wanted" value="Photography">
+                            <span>Photography</span>
+                        </label>
+                        <label class="radio-option-card">
+                            <input type="radio" name="services_wanted" value="Videography">
+                            <span>Videography</span>
+                        </label>
+                        <label class="radio-option-card">
+                            <input type="radio" name="services_wanted" value="Both Photography & Videography" checked>
+                            <span>Both Photography & Videography</span>
+                        </label>
                     </div>
+                </div>
 
-                    <div style="margin-bottom:1rem;">
-                        <label style="display:block; font-size:0.88rem; color:#555; margin-bottom:0.5rem;">Premium Album</label>
-                        <div class="pills-grid">
-                            <button type="button" class="btn-pill-opt album-opt active" data-val="40 leaves (80 pages)">40 leaves (80 pages)</button>
-                            <button type="button" class="btn-pill-opt album-opt" data-val="60 leaves (120 pages)">60 leaves (120 pages)</button>
-                            <button type="button" class="btn-pill-opt album-opt" data-val="75 leaves (150 pages)">75 leaves (150 pages)</button>
-                        </div>
+                <!-- Question 9: Which outputs would you like? -->
+                <div class="builder-step-card">
+                    <label class="form-question-label">Which outputs would you like?</label>
+                    <div class="planning-checkbox-group">
+                        <label class="checkbox-option-card">
+                            <input type="checkbox" name="outputs_wanted" value="Documentary Film">
+                            <span>Documentary Film</span>
+                        </label>
+                        <label class="checkbox-option-card">
+                            <input type="checkbox" name="outputs_wanted" value="Wedding Highlight Video" checked>
+                            <span>Wedding Highlight Video</span>
+                        </label>
+                        <label class="checkbox-option-card">
+                            <input type="checkbox" name="outputs_wanted" value="Wedding Album" checked>
+                            <span>Wedding Album</span>
+                        </label>
+                        <label class="checkbox-option-card">
+                            <input type="checkbox" name="outputs_wanted" value="All of the above">
+                            <span>All of the above</span>
+                        </label>
                     </div>
+                </div>
+
+                <!-- Question 10: Approximate Budget -->
+                <div class="builder-step-card">
+                    <label class="form-question-label">What is your approximate budget for photography & videography?</label>
+                    <div class="planning-radio-group">
+                        <label class="radio-option-card">
+                            <input type="radio" name="budget_range" value="Below ₹50,000">
+                            <span>Below ₹50,000</span>
+                        </label>
+                        <label class="radio-option-card">
+                            <input type="radio" name="budget_range" value="₹50,000 – ₹1,00,000">
+                            <span>₹50,000 – ₹1,00,000</span>
+                        </label>
+                        <label class="radio-option-card">
+                            <input type="radio" name="budget_range" value="₹1,00,000 – ₹1,50,000" checked>
+                            <span>₹1,00,000 – ₹1,50,000</span>
+                        </label>
+                        <label class="radio-option-card">
+                            <input type="radio" name="budget_range" value="₹1,50,000 – ₹2,00,000">
+                            <span>₹1,50,000 – ₹2,00,000</span>
+                        </label>
+                        <label class="radio-option-card">
+                            <input type="radio" name="budget_range" value="₹2,00,000+">
+                            <span>₹2,00,000+</span>
+                        </label>
+                        <label class="radio-option-card">
+                            <input type="radio" name="budget_range" value="Not decided yet">
+                            <span>Not decided yet</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="planning-form-footer text-center" style="margin-top: 1.5rem; margin-bottom: 1.5rem; color: #666; font-size: 0.9rem; line-height: 1.5;">
+                    Thank you for sharing your wedding details! 🤍<br>Our team will review your requirements and prepare a customised package for you.
                 </div>
 
                 <div class="builder-submit-box">
-                    <button type="submit" class="btn-package btn-gold-fill" id="builder-submit-btn" style="padding:1.2rem; font-size:0.95rem;">
-                        <i class="fa-solid fa-bag-shopping"></i> <span id="builder-submit-btn-text">Checkout Package</span>
+                    <button type="submit" class="btn-package btn-gold-fill" id="planning-submit-btn" style="padding:1.2rem; font-size:0.95rem; width:100%;">
+                        <i class="fa-brands fa-whatsapp"></i> <span>Submit Details via WhatsApp</span>
                     </button>
                 </div>
             </form>
