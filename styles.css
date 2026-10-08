@@ -1801,28 +1801,35 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
    INSTAGRAM FLUSH SQUARE FOLDER GALLERY STYLES (1:1 Ratio, Sharp Edges, Hover Name)
    ========================================================================== */
 
+/* ==========================================================================
+   INSTAGRAM FLUSH NATURAL ASPECT RATIO GALLERY STYLES (Portrait/Landscape Original Sizes)
+   ========================================================================== */
+
 .insta-folders-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 3px; /* Minimal seamless gap so photos touch flush like Instagram grid */
+    column-count: 4;
+    column-gap: 8px;
     margin-top: 1rem;
     margin-bottom: 4rem;
 }
 
 .insta-folder-card {
+    break-inside: avoid;
+    margin-bottom: 8px;
+    display: inline-block;
+    width: 100%;
     cursor: pointer;
-    border-radius: 0 !important; /* Sharp 0px square edges */
+    border-radius: 0 !important; /* Sharp 0px edges */
     overflow: hidden;
     background: #000000;
     transition: var(--transition-smooth);
     border: none !important;
 }
 
-/* Instagram Post Square Shape (1:1 Aspect Ratio, Sharp Edges) */
+/* Original Natural Shape (Portrait in Portrait, Landscape in Landscape) */
 .folder-square-wrapper {
     position: relative;
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: auto !important;
     overflow: hidden;
     background: #000000;
     border-radius: 0 !important;
@@ -1830,9 +1837,10 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 
 .folder-cover-img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain !important;
     border-radius: 0 !important;
+    display: block;
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -1874,7 +1882,7 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     transform: translateY(0);
 }
 
-/* Folder View Modal (Fullscreen Clean Photos Square Grid View - Uncollapsible 1:1 Squares) */
+/* Folder View Modal (Fullscreen Clean Photos View - Natural Original Portrait/Landscape Sizes) */
 .folder-view-modal {
     position: fixed;
     top: 0;
@@ -1943,17 +1951,20 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 .folder-view-grid {
     flex: 1;
     padding: 1.5rem 1rem 4rem 1rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 8px; /* Clean square grid spacing */
+    column-count: 4;
+    column-gap: 8px;
+    width: 100%;
 }
 
 .folder-photo-item {
+    break-inside: avoid;
+    margin-bottom: 8px;
+    display: inline-block;
     position: relative;
     width: 100%;
-    aspect-ratio: 1 / 1; /* Instagram Square */
-    min-height: 280px; /* Guarantees grid rows never squish into thin strips */
-    border-radius: 0 !important; /* Sharp 0px square edges */
+    aspect-ratio: auto !important; /* Natural Aspect Ratio */
+    min-height: auto !important;
+    border-radius: 0 !important;
     overflow: hidden;
     cursor: pointer;
     background: #111111;
@@ -1961,15 +1972,15 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 
 .folder-photo-item img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain !important;
     border-radius: 0 !important;
     display: block;
     transition: transform 0.4s ease;
 }
 
 .folder-photo-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
 
 .photo-item-overlay {
@@ -1997,25 +2008,31 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 
 @media (max-width: 992px) {
     .insta-folders-grid {
-        grid-template-columns: repeat(3, 1fr);
+        column-count: 3;
+        column-gap: 6px;
     }
     .folder-view-grid {
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        column-count: 3;
+        column-gap: 6px;
     }
 }
 
 @media (max-width: 600px) {
     .insta-folders-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2px;
+        column-count: 2;
+        column-gap: 4px;
+    }
+    .insta-folder-card {
+        margin-bottom: 4px;
     }
     .folder-view-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 4px;
+        column-count: 2;
+        column-gap: 4px;
         padding: 0.75rem 0.5rem 3rem 0.5rem;
     }
     .folder-photo-item {
-        min-height: 160px;
+        margin-bottom: 4px;
+        min-height: auto !important;
     }
 }
 
