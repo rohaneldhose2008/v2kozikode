@@ -129,39 +129,56 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 6. Video Player Modal
+    // 6. Video Player Modal (Plays HD YouTube Videos Inside Website)
     const videoModal = document.getElementById('video-modal');
     const videoIframe = document.getElementById('video-modal-iframe');
     const videoClose = document.getElementById('video-modal-close');
+    const videoModalTitle = document.getElementById('video-modal-title');
 
-    const videoCards = document.querySelectorAll('.video-card');
-    videoCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const videoId = card.getAttribute('data-video-id') || 'XHOmBV4js_E';
-            if (videoModal && videoIframe) {
-                videoIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-                videoModal.classList.add('active');
-            }
-        });
+    function openVideoModal(videoId, title) {
+        if (!videoModal || !videoIframe) return;
+        if (videoModalTitle) {
+            videoModalTitle.textContent = title || 'Wedding Film';
+        }
+        videoIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&enablejsapi=1`;
+        videoModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeVideoModal() {
+        if (!videoModal || !videoIframe) return;
+        videoModal.classList.remove('active');
+        videoIframe.src = '';
+        document.body.style.overflow = '';
+    }
+
+    document.addEventListener('click', (e) => {
+        const videoCard = e.target.closest('.video-card');
+        if (videoCard) {
+            e.preventDefault();
+            const videoId = videoCard.getAttribute('data-video-id') || 'UM5Uzg_xfQg';
+            const title = videoCard.getAttribute('data-video-title') || videoCard.querySelector('h4')?.textContent || 'Wedding Film';
+            openVideoModal(videoId, title);
+        }
     });
 
     if (videoClose) {
-        videoClose.addEventListener('click', () => {
-            if (videoModal && videoIframe) {
-                videoModal.classList.remove('active');
-                videoIframe.src = '';
-            }
-        });
+        videoClose.addEventListener('click', closeVideoModal);
     }
 
     if (videoModal) {
         videoModal.addEventListener('click', (e) => {
             if (e.target === videoModal) {
-                videoModal.classList.remove('active');
-                if (videoIframe) videoIframe.src = '';
+                closeVideoModal();
             }
         });
     }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && videoModal && videoModal.classList.contains('active')) {
+            closeVideoModal();
+        }
+    });
 
     // ==========================================================================
     // 7. EXACT KOZHIKODE DREAM & SIGNATURE PACKAGE BUILDER ENGINE

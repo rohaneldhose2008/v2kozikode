@@ -25,6 +25,10 @@
     --font-droid: 'Droid Sans', 'Droid Serif', serif;
     --font-handwriting: 'Great Vibes', cursive;
     --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+
+    /* Cinematic Film Reel Dimensions */
+    --reel-item-width: 440px;
+    --reel-gap: 2rem;
 }
 
 /* Reset & Base Styles */
@@ -714,9 +718,9 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 
 .cinematic-reel-track {
     display: flex;
-    gap: 2rem;
+    gap: var(--reel-gap);
     width: max-content;
-    animation: infiniteReel 28s linear infinite;
+    animation: infiniteReel 45s linear infinite;
 }
 
 .cinematic-reel-track:hover {
@@ -725,13 +729,14 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 
 .reel-item {
     position: relative;
-    width: 440px;
+    width: var(--reel-item-width);
     aspect-ratio: 16 / 10;
     flex-shrink: 0;
     overflow: hidden;
     border-radius: 6px;
     cursor: pointer;
     box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+    background: #000000;
 }
 
 .reel-item img {
@@ -751,7 +756,7 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.1) 60%);
+    background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.2) 60%);
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -798,7 +803,7 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 
 @keyframes infiniteReel {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-440px * 4 - 2rem * 4)); }
+    100% { transform: translateX(calc((var(--reel-item-width) + var(--reel-gap)) * -7)); }
 }
 
 /* Instagram Masonry Gallery Page */
@@ -1511,6 +1516,51 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     color: #FFFFFF;
     line-height: 1;
     z-index: 2210;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: var(--transition-smooth);
+}
+
+.lightbox-close:hover,
+.video-modal-close:hover {
+    color: var(--accent-gold);
+    transform: scale(1.15);
+}
+
+.video-modal-content-wrap {
+    width: 88vw;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    position: relative;
+    z-index: 2205;
+}
+
+.video-modal-header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.5rem;
+}
+
+.video-modal-badge {
+    font-family: var(--font-subheading) !important;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+}
+
+.video-modal-title {
+    font-family: var(--font-heading) !important;
+    font-size: 1.35rem;
+    color: #FFFFFF;
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.03em;
 }
 
 .lightbox-img {
@@ -1520,14 +1570,19 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 }
 
 .video-modal-container {
-    width: 85vw;
-    max-width: 1100px;
+    width: 100%;
     aspect-ratio: 16 / 9;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    background: #000000;
 }
 
 .video-modal-container iframe {
     width: 100%;
     height: 100%;
+    display: block;
+    border: none;
 }
 
 .animate-on-scroll {
@@ -1647,6 +1702,25 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 
     .form-row, .crew-details, .crew-grid-inline, .time-row {
         grid-template-columns: 1fr;
+    }
+
+    :root {
+        --reel-item-width: 310px;
+        --reel-gap: 1.25rem;
+    }
+
+    .video-modal-content-wrap {
+        width: 96vw;
+    }
+
+    .video-modal-close {
+        top: 0.8rem;
+        right: 1rem;
+        font-size: 2.4rem;
+    }
+
+    .video-modal-title {
+        font-size: 1.05rem;
     }
 }
 
