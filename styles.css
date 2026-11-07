@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500&display=swap');
+
 /* ==========================================================================
    BROWN LIGHTS MEDIA - Kozhikode Luxury Wedding Photography & Films
-   Typography: Didot Regular (Main Headings), Bebas Neue (Subheadings), Google Sans (Body)
+   Typography: Didot Regular (Main Headings), Bebas Neue (Subheadings), Google Sans Flex (Nav), Google Sans (Body)
    Theme: Crisp Clean White & Gold Aesthetic
    ========================================================================== */
 
@@ -21,6 +23,7 @@
     /* Requested Font Stack: Didot Regular (GFS Didot Web Font), Bodoni Moda, Cinzel, Droid Sans, Google Sans */
     --font-heading: 'GFS Didot', 'Didot', 'Bodoni Moda', 'Cinzel', serif;
     --font-subheading: 'Cinzel', 'Bodoni MT', serif;
+    --font-nav: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-body: 'Open Sans', 'Google Sans', 'Product Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-droid: 'Droid Sans', 'Droid Serif', serif;
     --font-handwriting: 'Great Vibes', cursive;
@@ -157,10 +160,11 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 }
 
 .nav-link {
-    font-family: var(--font-subheading);
+    font-family: var(--font-nav);
+    font-weight: 400;
     color: rgba(255, 255, 255, 0.95);
     font-size: 1.05rem;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.02em;
     text-transform: none;
     position: relative;
     padding-bottom: 4px;
@@ -1852,7 +1856,7 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 
 .little-stories-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
     width: 100%;
     margin-top: 1.5rem;
