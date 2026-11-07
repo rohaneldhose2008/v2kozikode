@@ -73,7 +73,7 @@ const galleryPageHTML = `<!DOCTYPE html>
     <meta name="description" content="Explore luxury wedding photography collections and real wedding stories in Kozhikode (Calicut), Kerala by Brown Lights Media. Candid wedding albums, bridal photos, and Kerala wedding films.">
     <meta name="keywords" content="Calicut Wedding Gallery, Kozhikode Wedding Photography Albums, Kerala Candid Wedding Photos, Muslim Wedding Album Kozhikode, Hindu Marriage Photos Calicut, Destination Wedding Portfolio Kerala">
     <meta name="author" content="Brown Lights Media">
-    <link rel="canonical" href="https://brownlightsmedia.com/gallery.html">
+    <link rel="canonical" href="https://brownlights.in/gallery.html">
 
     <!-- GEO Tags for Kozhikode, Kerala -->
     <meta name="geo.region" content="IN-KL">
@@ -86,8 +86,8 @@ const galleryPageHTML = `<!DOCTYPE html>
     <meta property="og:site_name" content="Brown Lights Media">
     <meta property="og:title" content="Wedding Photo Gallery – Best Wedding Photographers in Calicut, Kozhikode, Kerala">
     <meta property="og:description" content="Explore luxury wedding photography collections and real wedding stories in Kozhikode (Calicut), Kerala by Brown Lights Media.">
-    <meta property="og:url" content="https://brownlightsmedia.com/gallery.html">
-    <meta property="og:image" content="https://brownlightsmedia.com/assets/images/logo.png">
+    <meta property="og:url" content="https://brownlights.in/gallery.html">
+    <meta property="og:image" content="https://brownlights.in/assets/images/logo.png">
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
@@ -96,11 +96,11 @@ const galleryPageHTML = `<!DOCTYPE html>
       "@type": "ImageGallery",
       "name": "Brown Lights Media Kozhikode Wedding Photography Gallery",
       "description": "Real wedding photo collections and albums in Kozhikode (Calicut), Kerala.",
-      "url": "https://brownlightsmedia.com/gallery.html",
+      "url": "https://brownlights.in/gallery.html",
       "author": {
         "@type": "Organization",
         "name": "Brown Lights Media",
-        "url": "https://brownlightsmedia.com/"
+        "url": "https://brownlights.in/"
       }
     }
     </script>
