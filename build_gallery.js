@@ -173,6 +173,7 @@ const galleryPageHTML = `<!DOCTYPE html>
     <footer class="site-footer">
         <div class="footer-container">
             <p>&copy; 2026 BROWN LIGHTS MEDIA KOZHIKODE. All Rights Reserved. Crafting stories through light, emotion, and creativity.</p>
+            <p class="footer-credits">Creation by <a href="https://www.abnoracreations.com" target="_blank" rel="noopener noreferrer">Abnora Creation</a></p>
         </div>
     </footer>
 
