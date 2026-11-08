@@ -205,9 +205,23 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 
 /* Subpage Header for gallery.html */
 .subpage-header {
-    background: #111111;
+    background: #FFFFFF;
     position: relative;
     padding: 1.5rem 3.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.subpage-header .nav-link {
+    color: #111111;
+}
+
+.subpage-header .nav-link:hover,
+.subpage-header .nav-link.active {
+    color: var(--accent-gold);
+}
+
+.subpage-header .mobile-toggle span {
+    background-color: #111111;
 }
 
 /* Hero Section */
