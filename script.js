@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 `📝 *Custom Requests / Notes / Questions:*\n${customNotes}`;
 
             const encoded = encodeURIComponent(payload);
-            window.open(`https://wa.me/919746558773?text=${encoded}`, '_blank');
+            window.open(`https://wa.me/916238484158?text=${encoded}`, '_blank');
             if (signatureModal) signatureModal.classList.remove('active');
         });
     }
@@ -555,7 +555,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 `Thank you for sharing your details! We will get back to you shortly.`;
 
             const encoded = encodeURIComponent(payload);
-            window.open(`https://wa.me/919746558773?text=${encoded}`, '_blank');
+            window.open(`https://wa.me/916238484158?text=${encoded}`, '_blank');
             if (dreamModal) dreamModal.classList.remove('active');
         });
     }
