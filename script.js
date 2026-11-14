@@ -97,8 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. Instagram Square Folder Cards & Folder View Modals
-    const folderCards = document.querySelectorAll('.insta-folder-card');
+    // 5. Instagram Folder Cards & Folder View Modals
+    const folderCards = document.querySelectorAll('.insta-folder-card, .little-story-card');
     folderCards.forEach(card => {
         card.addEventListener('click', () => {
             const folderKey = card.getAttribute('data-folder');

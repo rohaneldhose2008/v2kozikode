@@ -1920,7 +1920,7 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     border-radius: 4px;
     overflow: hidden;
     cursor: pointer;
-    background: #111111;
+    background: transparent !important;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
 }
@@ -1935,13 +1935,13 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     width: 100%;
     aspect-ratio: 4 / 3;
     overflow: hidden;
-    background: #111111;
+    background: transparent !important;
 }
 
 .little-story-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover !important;
     object-position: center 25%;
     display: block;
     transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.5s ease;
@@ -2017,41 +2017,41 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 }
 
 .insta-folders-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
+    column-count: 4;
+    column-gap: 12px;
     margin-top: 1.5rem;
     margin-bottom: 4rem;
     width: 100%;
 }
 
 .insta-folder-card {
-    position: relative;
+    break-inside: avoid;
+    margin-bottom: 12px;
+    display: block;
     width: 100%;
-    aspect-ratio: 1 / 1;
-    margin-bottom: 0;
+    position: relative;
     cursor: pointer;
     border-radius: 0 !important;
     overflow: hidden;
-    background: #111111;
+    background: transparent !important;
     transition: var(--transition-smooth);
     border: none !important;
 }
 
-/* Equal Gap Square Grid (Uniform 1:1 Album Covers, No awkward or jagged gaps) */
+/* Original Natural Photo Dimensions (Not square, exact photo size, equal gaps) */
 .folder-square-wrapper {
     position: relative;
     width: 100%;
-    height: 100%;
-    aspect-ratio: 1 / 1 !important;
+    height: auto;
+    aspect-ratio: auto !important;
     overflow: hidden;
-    background: #111111;
+    background: transparent !important;
     border-radius: 0 !important;
 }
 
 .folder-cover-img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover !important;
     border-radius: 0 !important;
     display: block;
@@ -2166,14 +2166,14 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     flex: 1;
     padding: 1.5rem 1rem 4rem 1rem;
     column-count: 4;
-    column-gap: 8px;
+    column-gap: 12px;
     width: 100%;
 }
 
 .folder-photo-item {
     break-inside: avoid;
-    margin-bottom: 8px;
-    display: inline-block;
+    margin-bottom: 12px;
+    display: block;
     position: relative;
     width: 100%;
     aspect-ratio: auto !important; /* Natural Aspect Ratio */
@@ -2181,13 +2181,13 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     border-radius: 0 !important;
     overflow: hidden;
     cursor: pointer;
-    background: #111111;
+    background: transparent !important;
 }
 
 .folder-photo-item img {
     width: 100%;
     height: auto;
-    object-fit: contain !important;
+    object-fit: cover !important;
     border-radius: 0 !important;
     display: block;
     transition: transform 0.4s ease;
@@ -2222,30 +2222,36 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
 
 @media (max-width: 992px) {
     .insta-folders-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 6px;
+        column-count: 3;
+        column-gap: 10px;
+    }
+    .insta-folder-card {
+        margin-bottom: 10px;
     }
     .folder-view-grid {
         column-count: 3;
-        column-gap: 6px;
+        column-gap: 10px;
+    }
+    .folder-photo-item {
+        margin-bottom: 10px;
     }
 }
 
 @media (max-width: 600px) {
     .insta-folders-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 4px;
+        column-count: 2;
+        column-gap: 8px;
     }
     .insta-folder-card {
-        margin-bottom: 0;
+        margin-bottom: 8px;
     }
     .folder-view-grid {
         column-count: 2;
-        column-gap: 4px;
+        column-gap: 8px;
         padding: 0.75rem 0.5rem 3rem 0.5rem;
     }
     .folder-photo-item {
-        margin-bottom: 4px;
+        margin-bottom: 8px;
         min-height: auto !important;
     }
 }
