@@ -1483,6 +1483,12 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     font-size: 0.85rem;
 }
 
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
 .footer-credits {
     margin-top: 0.6rem;
     font-size: 0.85rem;
