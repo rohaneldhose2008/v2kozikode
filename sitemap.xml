@@ -36,7 +36,7 @@
     <!-- Little Ones Kids & Baby Photography Studio Page -->
     <url>
         <loc>https://brownlights.in/little-ones.html</loc>
-        <lastmod>2026-11-07</lastmod>
+        <lastmod>2026-11-14</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -48,6 +48,19 @@
             <image:loc>https://brownlights.in/assets/images/little-ones/Hera%20Alam/1.jpg</image:loc>
             <image:title>Hera Alam - Little Ones Milestone Shoot</image:title>
             <image:caption>Baby photoshoot session by Little Ones Studio</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Planning & Celebration Reservation Page -->
+    <url>
+        <loc>https://brownlights.in/planning.html</loc>
+        <lastmod>2026-11-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://brownlights.in/assets/images/logo.png</image:loc>
+            <image:title>Brown Lights Media Planning</image:title>
+            <image:caption>Plan and reserve your luxury wedding photography and films in Kozhikode</image:caption>
         </image:image>
     </url>
 

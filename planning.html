@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brown Lights Media Planning | Kozhikode Wedding Photography</title>
+    <meta name="description" content="Plan your dream wedding photography and cinematic films with Brown Lights Media Kozhikode. Reserve your date and customize your celebration coverage.">
+    <link rel="canonical" href="https://brownlights.in/planning.html">
+    <link rel="icon" type="image/png" href="assets/images/blm logo (1).png">
+
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://brownlights.in/planning.html">
+    <meta property="og:title" content="Brown Lights Media Planning | Kozhikode Wedding Photography">
+    <meta property="og:description" content="Plan your dream wedding photography and cinematic films with Brown Lights Media Kozhikode. Reserve your date and customize your celebration coverage.">
+    <meta property="og:image" content="https://brownlights.in/assets/images/logo.png">
+
+    <!-- Google Fonts: GFS Didot, Google Sans Flex, Open Sans, Cinzel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Google+Sans+Flex:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="white-theme">
+
+    <!-- Fixed Floating Brand Signature Logo -->
+    <a href="index.html#home" class="floating-brand-logo" title="Brown Lights Media Home">
+        <img src="assets/images/logo.png" alt="Brown Lights Media Logo" fetchpriority="high">
+    </a>
+
+    <!-- Fixed Navigation Header -->
+    <header class="site-header subpage-header" id="site-header">
+        <div class="header-container">
+            <div class="brand-logo-spacer"></div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#films" class="nav-link">Films</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="little-ones.html" class="nav-link">Little Ones</a></li>
+                    <li><a href="planning.html" class="nav-link active">Planning</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Planning Page Hero Header -->
+    <section class="planning-page-hero">
+        <div class="container">
+            <span class="planning-tag-gold">RESERVE YOUR DATE &amp; EXPERIENCE</span>
+            <h1 class="planning-page-title">Brown Lights Media Planning</h1>
+            <p class="planning-page-subtitle">
+                Let us capture your love story with understated glamour and timeless elegance. Share your celebration details below and our team will get in touch with you immediately.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Planning Details Section -->
+    <section class="planning-section">
+        <div class="container">
+            <div class="planning-card-wrapper">
+                <div class="planning-form-header">
+                    <h2 class="planning-form-title">Tell Us About Your Celebration</h2>
+                    <p class="planning-form-desc">
+                        Please fill in your celebration schedule, coverage requirements, and preferences below. Every detail helps us curate a truly bespoke visual narrative for you.
+                    </p>
+                </div>
+
+                <form id="dedicated-planning-form">
+                    <!-- 1. Client / Couple Name -->
+                    <div class="planning-field-group">
+                        <label for="plan-client-name" class="form-question-label">Your Name / Couple Names *</label>
+                        <input type="text" id="plan-client-name" name="client_name" class="planning-input" placeholder="e.g. Rahul & Sneha" required autocomplete="name">
+                    </div>
+
+                    <!-- 2. WhatsApp Number -->
+                    <div class="planning-field-group">
+                        <label for="plan-whatsapp" class="form-question-label">WhatsApp Number *</label>
+                        <input type="tel" id="plan-whatsapp" name="whatsapp_number" class="planning-input" placeholder="e.g. +91 62384 84158" required autocomplete="tel">
+                    </div>
+
+                    <!-- 3. Wedding / Event Date -->
+                    <div class="planning-field-group">
+                        <label for="plan-wedding-date" class="form-question-label">Celebration / Wedding Date *</label>
+                        <input type="date" id="plan-wedding-date" name="wedding_date" class="planning-input" required>
+                    </div>
+
+                    <!-- 4. Wedding Coverage -->
+                    <div class="planning-field-group">
+                        <label class="form-question-label">Celebration Coverage *</label>
+                        <div class="planning-radio-group">
+                            <label class="radio-option-card">
+                                <input type="radio" name="wedding_coverage" value="Both Bride & Groom sides" checked>
+                                <span>Both Bride &amp; Groom sides (Complete Coverage)</span>
+                            </label>
+                            <label class="radio-option-card">
+                                <input type="radio" name="wedding_coverage" value="Bride side only">
+                                <span>Bride side only</span>
+                            </label>
+                            <label class="radio-option-card">
+                                <input type="radio" name="wedding_coverage" value="Groom side only">
+                                <span>Groom side only</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 5. Programme Venue & City -->
+                    <div class="planning-field-group">
+                        <label for="plan-venue" class="form-question-label">Programme Venue &amp; City</label>
+                        <input type="text" id="plan-venue" name="programme_venue" class="planning-input" placeholder="e.g. Kozhikode, Calicut / Luxury Resort / Convention Centre">
+                    </div>
+
+                    <!-- 6. Expected Number of Guests -->
+                    <div class="planning-field-group">
+                        <label class="form-question-label">Expected Number of Guests</label>
+                        <div class="planning-radio-group">
+                            <label class="radio-option-card">
+                                <input type="radio" name="guest_count" value="Under 500" checked>
+                                <span>Under 500 guests</span>
+                            </label>
+                            <label class="radio-option-card">
+                                <input type="radio" name="guest_count" value="500–1,000">
+                                <span>500 – 1,000 guests</span>
+                            </label>
+                            <label class="radio-option-card">
+                                <input type="radio" name="guest_count" value="1,000–2,000">
+                                <span>1,000 – 2,000 guests</span>
+                            </label>
+                            <label class="radio-option-card">
+                                <input type="radio" name="guest_count" value="2,000+">
+                                <span>2,000+ guests</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 7. Extra Photographer for >1000 guests -->
+                    <div class="planning-field-group">
+                        <label class="form-question-label">Additional Lead Photographer (for large gatherings > 1,000 guests)?</label>
+                        <div class="planning-radio-group">
+                            <label class="radio-option-card">
+                                <input type="radio" name="extra_photographer" value="Not sure yet (Guide us)" checked>
+                                <span>Not sure yet (Guide us)</span>
+                            </label>
+                            <label class="radio-option-card">
+                                <input type="radio" name="extra_photographer" value="Yes, add extra photographer">
+                                <span>Yes, add extra photographer</span>
+                            </label>
+                            <label class="radio-option-card">
+                                <input type="radio" name="extra_photographer" value="No, standard crew is sufficient">
+                                <span>No, standard crew is sufficient</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 8. Desired Services -->
+                    <div class="planning-field-group">
+                        <label class="form-question-label">Which services would you like?</label>
+                        <div class="planning-radio-group">
+                            <label class="radio-option-card">
+                                <input type="radio" name="services_wanted" value="Both Photography & Cinematic Videography" checked>
+                                <span>Both Photography &amp; Cinematic Videography (Recommended)</span>
+                            </label>
+                            <label class="radio-option-card">
+                                <input type="radio" name="services_wanted" value="Photography Only">
+                                <span>Photography Only</span>
+                            </label>
+                            <label class="radio-option-card">
+                                <input type="radio" name="services_wanted" value="Cinematic Videography Only">
+                                <span>Cinematic Videography Only</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 9. Deliverables & Outputs Wanted -->
+                    <div class="planning-field-group">
+                        <label class="form-question-label">Which deliverables &amp; outputs would you like?</label>
+                        <div class="planning-checkbox-group">
+                            <label class="checkbox-option-card">
+                                <input type="checkbox" name="outputs_wanted" value="Wedding Highlight Video (3-6 mins)" checked>
+                                <span>Wedding Highlight Video (3–6 minutes cinematic)</span>
+                            </label>
+                            <label class="checkbox-option-card">
+                                <input type="checkbox" name="outputs_wanted" value="Signature Wedding Album" checked>
+                                <span>Signature Wedding Album (Premium 40 leaves / 80 pages)</span>
+                            </label>
+                            <label class="checkbox-option-card">
+                                <input type="checkbox" name="outputs_wanted" value="Instagram Reels & Teasers" checked>
+                                <span>Instagram Reels &amp; Teasers</span>
+                            </label>
+                            <label class="checkbox-option-card">
+                                <input type="checkbox" name="outputs_wanted" value="Full Length Documentary Film">
+                                <span>Full Length Documentary Film</span>
+                            </label>
+                            <label class="checkbox-option-card">
+                                <input type="checkbox" name="outputs_wanted" value="Curated High-Res Soft Copies">
+                                <span>Curated High-Resolution Soft Copies (Google Drive / USB)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 10. Approximate Budget -->
+                    <div class="planning-field-group">
+                        <label class="form-question-label">What is your approximate budget for photography &amp; films?</label>
+                        <div class="planning-radio-group">
+                            <label class="radio-option-card">
+                                <input type="radio" name="budget_range" value="Below ₹50,000">
+                                <span>Below ₹50,000</span>
+                            </label>
+                            <label class="radio-option-card">
+                                <input type="radio" name="budget_range" value="₹50,000 – ₹1,00,000">
+                                <span>₹50,000 – ₹1,00,000</span>
+                            </label>
+                            <label class="radio-option-card">
+                                <input type="radio" name="budget_range" value="₹1,00,000 – ₹1,50,000" checked>
+                                <span>₹1,00,000 – ₹1,50,000</span>
+                            </label>
+                            <label class="radio-option-card">
+                                <input type="radio" name="budget_range" value="₹1,50,000 – ₹2,00,000">
+                                <span>₹1,50,000 – ₹2,00,000</span>
+                            </label>
+                            <label class="radio-option-card">
+                                <input type="radio" name="budget_range" value="₹2,00,000+">
+                                <span>₹2,00,000+</span>
+                            </label>
+                            <label class="radio-option-card">
+                                <input type="radio" name="budget_range" value="Not decided yet">
+                                <span>Not decided yet</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 11. Notes & Vision -->
+                    <div class="planning-field-group">
+                        <label for="plan-notes" class="form-question-label">Any Special Requests, Notes, or Questions?</label>
+                        <textarea id="plan-notes" name="custom_notes" class="planning-textarea" placeholder="Tell us about the vibe, ceremony traditions, locations, or anything special you envision..."></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="planning-field-group" style="margin-top: 2.5rem;">
+                        <button type="submit" class="btn-planning-submit">
+                            <i class="fa-brands fa-whatsapp" style="font-size: 1.25rem;"></i>
+                            <span>Submit Celebration Details via WhatsApp</span>
+                        </button>
+                        <p style="text-align: center; margin-top: 1rem; font-family: var(--font-nav); font-size: 0.85rem; color: #888888;">
+                            Your details will be instantly shared with our lead planning team at +91 62384 84158.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html#home" class="footer-logo">Brown Lights Media</a>
+                <p class="footer-tagline">Kozhikode, Kerala — Telling your love story with understated glamour.</p>
+                <div class="footer-socials">
+                    <a href="https://instagram.com/brownlightsmedia" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://youtube.com/brownlightsmedia" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://wa.me/916238484158" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links-group">
+                <div class="footer-col">
+                    <h4 class="footer-heading">Navigation</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#films">Films</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="little-ones.html">Little Ones</a></li>
+                        <li><a href="planning.html">Planning</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Celebrations</h4>
+                    <ul>
+                        <li><a href="gallery.html">Weddings</a></li>
+                        <li><a href="gallery.html">Engagements</a></li>
+                        <li><a href="gallery.html">Pre-Wedding</a></li>
+                        <li><a href="little-ones.html">Little Ones Studio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul>
+                        <li><a href="tel:+916238484158">+91 62384 84158</a></li>
+                        <li><a href="mailto:hello@brownlights.in">hello@brownlights.in</a></li>
+                        <li>Kozhikode, Kerala, India</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Brown Lights Media. All rights reserved. <span style="margin: 0 8px; opacity: 0.4;">|</span> Creations by <a href="https://www.ebenoracreations.com" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">Ebenora Creations</a></p>
+        </div>
+    </footer>
+
+    <!-- Lightweight Zero-Lag Script for Fast WhatsApp Submission -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const mainNav = document.querySelector('.main-nav');
+            if (mobileToggle && mainNav) {
+                mobileToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    mobileToggle.classList.toggle('active');
+                });
+            }
+
+            // Fast WhatsApp Form Handler
+            const form = document.getElementById('dedicated-planning-form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const clientName = document.getElementById('plan-client-name')?.value.trim() || 'N/A';
+                    const whatsapp = document.getElementById('plan-whatsapp')?.value.trim() || 'N/A';
+                    const weddingDate = document.getElementById('plan-wedding-date')?.value || 'N/A';
+                    const coverage = form.querySelector('input[name="wedding_coverage"]:checked')?.value || 'N/A';
+                    const venue = document.getElementById('plan-venue')?.value.trim() || 'Not specified';
+                    const guestCount = form.querySelector('input[name="guest_count"]:checked')?.value || 'N/A';
+                    const extraPhotographer = form.querySelector('input[name="extra_photographer"]:checked')?.value || 'N/A';
+                    const services = form.querySelector('input[name="services_wanted"]:checked')?.value || 'N/A';
+                    
+                    const outputsChecked = Array.from(form.querySelectorAll('input[name="outputs_wanted"]:checked')).map(cb => cb.value);
+                    const outputs = outputsChecked.length > 0 ? outputsChecked.join(', ') : 'None specified';
+                    
+                    const budget = form.querySelector('input[name="budget_range"]:checked')?.value || 'N/A';
+                    const customNotes = document.getElementById('plan-notes')?.value.trim() || 'None';
+
+                    let message = `Hello Brown Lights Media! 🤍 Here are our celebration planning details:\n\n` +
+                        `👤 *Client / Couple:* ${clientName}\n` +
+                        `📱 *WhatsApp:* ${whatsapp}\n` +
+                        `📅 *Celebration Date:* ${weddingDate}\n` +
+                        `👰 *Coverage:* ${coverage}\n` +
+                        `📍 *Programme Venue:* ${venue}\n` +
+                        `👥 *Expected Guests:* ${guestCount}\n` +
+                        `📸 *Extra Lead Photographer:* ${extraPhotographer}\n` +
+                        `🎥 *Services Desired:* ${services}\n` +
+                        `🎞️ *Outputs Wanted:* ${outputs}\n` +
+                        `💰 *Approx. Budget:* ${budget}\n\n` +
+                        `📝 *Special Requests / Notes:*\n${customNotes}\n\n` +
+                        `Looking forward to hearing from your team!`;
+
+                    const encoded = encodeURIComponent(message);
+                    window.open(`https://wa.me/916238484158?text=${encoded}`, '_blank');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
