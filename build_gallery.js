@@ -73,7 +73,7 @@ const galleryPageHTML = `<!DOCTYPE html>
     <meta name="description" content="Explore luxury wedding photography collections and real wedding stories in Kozhikode (Calicut), Kerala by Brown Lights Media. Candid wedding albums, bridal photos, and Kerala wedding films.">
     <meta name="keywords" content="Calicut Wedding Gallery, Kozhikode Wedding Photography Albums, Kerala Candid Wedding Photos, Muslim Wedding Album Kozhikode, Hindu Marriage Photos Calicut, Destination Wedding Portfolio Kerala">
     <meta name="author" content="Brown Lights Media">
-    <link rel="canonical" href="https://brownlights.in/gallery.html">
+    <link rel="canonical" href="https://brownlights.in/gallery">
 
     <!-- GEO Tags for Kozhikode, Kerala -->
     <meta name="geo.region" content="IN-KL">
@@ -86,7 +86,7 @@ const galleryPageHTML = `<!DOCTYPE html>
     <meta property="og:site_name" content="Brown Lights Media">
     <meta property="og:title" content="Wedding Photo Gallery – Best Wedding Photographers in Calicut, Kozhikode, Kerala">
     <meta property="og:description" content="Explore luxury wedding photography collections and real wedding stories in Kozhikode (Calicut), Kerala by Brown Lights Media.">
-    <meta property="og:url" content="https://brownlights.in/gallery.html">
+    <meta property="og:url" content="https://brownlights.in/gallery">
     <meta property="og:image" content="https://brownlights.in/assets/images/logo.png">
 
     <!-- Schema.org JSON-LD -->
@@ -96,7 +96,7 @@ const galleryPageHTML = `<!DOCTYPE html>
       "@type": "ImageGallery",
       "name": "Brown Lights Media Kozhikode Wedding Photography Gallery",
       "description": "Real wedding photo collections and albums in Kozhikode (Calicut), Kerala.",
-      "url": "https://brownlights.in/gallery.html",
+      "url": "https://brownlights.in/gallery",
       "author": {
         "@type": "Organization",
         "name": "Brown Lights Media",
@@ -106,8 +106,8 @@ const galleryPageHTML = `<!DOCTYPE html>
     </script>
     
     <!-- Favicon set to logo.png -->
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
-    <link rel="shortcut icon" href="assets/images/logo.png">
+    <link rel="icon" type="image/png" href="/assets/images/logo.png">
+    <link rel="shortcut icon" href="/assets/images/logo.png">
 
     <!-- Google Fonts: GFS Didot, Bodoni Moda, Bebas Neue, Open/Google Sans, Droid Sans, Droid Serif, Cinzel, Google Sans Flex -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -115,13 +115,13 @@ const galleryPageHTML = `<!DOCTYPE html>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Droid+Sans:wght@400;700&family=Droid+Serif:ital,wght@0,400;0,700;1,400&family=GFS+Didot&family=Google+Sans+Flex:wght@400;500&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Great+Vibes&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body class="white-theme">
 
     <!-- Fixed Floating Big Pure PNG Signature Logo -->
-    <a href="index.html" class="floating-brand-logo" title="Brown Lights Media Home">
-        <img src="assets/images/logo.png" alt="Brown Lights Media Logo">
+    <a href="/" class="floating-brand-logo subpage-brand-logo" title="Brown Lights Media Home">
+        <img src="/assets/images/logo.png" alt="Brown Lights Media Logo">
     </a>
 
     <!-- Fixed Navigation Header -->
@@ -131,11 +131,12 @@ const galleryPageHTML = `<!DOCTYPE html>
             
             <nav class="main-nav">
                 <ul class="nav-list">
-                    <li><a href="index.html#home" class="nav-link">Home</a></li>
-                    <li><a href="index.html#about" class="nav-link">About</a></li>
-                    <li><a href="index.html#films" class="nav-link">Films</a></li>
-                    <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
-                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/#about" class="nav-link">About</a></li>
+                    <li><a href="/#films" class="nav-link">Films</a></li>
+                    <li><a href="/gallery" class="nav-link active">Gallery</a></li>
+                    <li><a href="/little-browns" class="nav-link">Little Browns</a></li>
+                    <li><a href="/#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
 
@@ -190,4 +191,7 @@ const galleryPageHTML = `<!DOCTYPE html>
 `;
 
 fs.writeFileSync(path.join(__dirname, 'gallery.html'), galleryPageHTML, 'utf8');
-console.log('Successfully updated build_gallery.js and generated gallery.html with updated cover thumbnails!');
+const galleryDir = path.join(__dirname, 'gallery');
+if (!fs.existsSync(galleryDir)) fs.mkdirSync(galleryDir, { recursive: true });
+fs.writeFileSync(path.join(galleryDir, 'index.html'), galleryPageHTML, 'utf8');
+console.log('Successfully updated gallery.html and gallery/index.html with updated cover thumbnails!');

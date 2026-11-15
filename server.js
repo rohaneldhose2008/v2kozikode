@@ -24,10 +24,22 @@ const server = http.createServer((req, res) => {
     let reqUrl = decodeURIComponent(req.url.split('?')[0]);
     if (reqUrl === '/') reqUrl = '/index.html';
 
-    const safePath = path.normalize(path.join(PUBLIC_DIR, reqUrl));
+    let safePath = path.normalize(path.join(PUBLIC_DIR, reqUrl));
     if (!safePath.startsWith(PUBLIC_DIR)) {
         res.writeHead(403, { 'Content-Type': 'text/plain' });
         return res.end('403 Forbidden');
+    }
+
+    // Support clean URLs: if directory, check for index.html; if file without extension, check for .html
+    if (fs.existsSync(safePath) && fs.statSync(safePath).isDirectory()) {
+        const indexPath = path.join(safePath, 'index.html');
+        if (fs.existsSync(indexPath)) {
+            safePath = indexPath;
+        }
+    } else if (!fs.existsSync(safePath)) {
+        if (fs.existsSync(safePath + '.html')) {
+            safePath = safePath + '.html';
+        }
     }
 
     fs.stat(safePath, (err, stats) => {

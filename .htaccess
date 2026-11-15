@@ -1,0 +1,19 @@
+RewriteEngine On
+RewriteBase /
+
+# 1. Redirect requests with .html to clean URLs (301 Permanent Redirect)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/([^.]+)\.html[\s?] [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# 2. Redirect index to root /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/index(\.html)?[\s?] [NC]
+RewriteRule ^ / [R=301,L]
+
+# 3. Redirect /planning to /booking
+RewriteRule ^planning/?$ /booking [R=301,L]
+
+# 4. Resolve clean URLs to .html files or folder index.html if file does not exist directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]

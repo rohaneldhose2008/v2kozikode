@@ -22,7 +22,7 @@
 
     <!-- Wedding Photo Gallery Page -->
     <url>
-        <loc>https://brownlights.in/gallery.html</loc>
+        <loc>https://brownlights.in/gallery</loc>
         <lastmod>2026-11-07</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -35,7 +35,7 @@
 
     <!-- Little Ones Kids & Baby Photography Studio Page -->
     <url>
-        <loc>https://brownlights.in/little-ones.html</loc>
+        <loc>https://brownlights.in/little-browns</loc>
         <lastmod>2026-11-14</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -53,7 +53,7 @@
 
     <!-- Planning & Celebration Reservation Page -->
     <url>
-        <loc>https://brownlights.in/planning.html</loc>
+        <loc>https://brownlights.in/booking</loc>
         <lastmod>2026-11-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
