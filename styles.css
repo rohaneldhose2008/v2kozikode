@@ -119,13 +119,20 @@ h3, h4, h5, .section-tag-gold, .section-subtitle, .cta-label, .badge-tag, .badge
     height: 115px; /* BIGGER AND BIGGER LOGO */
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.75));
+    /* Pure luminous white logo with shadow on dark video hero headers (index & little-ones) */
+    filter: brightness(0) invert(1) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.85));
     transition: transform 0.3s ease;
     background: transparent !important;
 }
 
 .floating-brand-logo:hover img {
     transform: scale(1.06);
+}
+
+/* Elegant dark signature logo on subpages with clean white header (gallery & planning) */
+.subpage-brand-logo img,
+.floating-brand-logo.logo-dark img {
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15)) !important;
 }
 
 .brand-logo-spacer {
