@@ -244,18 +244,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const customNotes = document.getElementById('signature-custom-notes')?.value.trim() || 'None';
 
             let payload = `Hello Brown Lights Media! I want to checkout the Signature Package:\n\n` +
-                `📌 *Package Coverage:* FOR BOTH SIDES (BRIDE & GROOM)\n\n` +
-                `👥 *The Crew:* \n` +
-                `  • Wedding Eve: 1 Lead Candid Photographer, 1 Lead Candid Cinematographer\n` +
-                `  • Wedding Day: 1 Lead Candid Photographer, 1 Lead Candid Cinematographer\n\n` +
-                `📷 *Deliverables:*\n` +
-                `  • Edited photos (up to 50 pics)\n` +
-                `  • Soft Copies (USB & Google Drive)\n` +
-                `  • Instagram film video x 2\n` +
-                `  • Wedding highlight video (3-6 minutes)\n` +
-                `  • Album 40 leaves (80 pages)\n` +
-                `  • + Complimentary: Mini album, Signature online album, Table calendar, Photo frame\n\n` +
-                `📝 *Custom Requests / Notes / Questions:*\n${customNotes}`;
+                `*Package Coverage:* FOR BOTH SIDES (BRIDE & GROOM)\n\n` +
+                `*The Crew:*\n` +
+                `  - Wedding Eve: 1 Lead Candid Photographer, 1 Lead Candid Cinematographer\n` +
+                `  - Wedding Day: 1 Lead Candid Photographer, 1 Lead Candid Cinematographer\n\n` +
+                `*Deliverables:*\n` +
+                `  - Edited photos (up to 50 pics)\n` +
+                `  - Soft Copies (USB & Google Drive)\n` +
+                `  - Instagram film video x 2\n` +
+                `  - Wedding highlight video (3-6 minutes)\n` +
+                `  - Album 40 leaves (80 pages)\n` +
+                `  - Complimentary: Mini album, Signature online album, Table calendar, Photo frame\n\n` +
+                `*Custom Requests / Notes / Questions:*\n${customNotes}`;
 
             const encoded = encodeURIComponent(payload);
             window.open(`https://wa.me/916238484158?text=${encoded}`, '_blank');
@@ -541,17 +541,17 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const budget = planningForm.querySelector('input[name="budget_range"]:checked')?.value || 'N/A';
 
-            let payload = `Hello Brown Lights Media! 🤍 Here are my Wedding Client Details:\n\n` +
-                `👤 *Client Name:* ${clientName}\n` +
-                `📱 *WhatsApp Number:* ${whatsapp}\n` +
-                `📅 *Wedding Date:* ${weddingDate}\n` +
-                `👰 *Wedding Coverage:* ${coverage}\n` +
-                `📍 *Programme Venue:* ${venue}\n` +
-                `👥 *Expected Guests:* ${guestCount}\n` +
-                `📸 *Extra Photographer (>1000 guests):* ${extraPhotographer}\n` +
-                `🎥 *Services Desired:* ${services}\n` +
-                `🎞️ *Outputs Wanted:* ${outputs}\n` +
-                `💰 *Approximate Budget:* ${budget}\n\n` +
+            let payload = `Hello Brown Lights Media! Here are my Wedding Client Details:\n\n` +
+                `*Client Name:* ${clientName}\n` +
+                `*WhatsApp Number:* ${whatsapp}\n` +
+                `*Wedding Date:* ${weddingDate}\n` +
+                `*Wedding Coverage:* ${coverage}\n` +
+                `*Programme Venue:* ${venue}\n` +
+                `*Expected Guests:* ${guestCount}\n` +
+                `*Extra Photographer (>1000 guests):* ${extraPhotographer}\n` +
+                `*Services Desired:* ${services}\n` +
+                `*Outputs Wanted:* ${outputs}\n` +
+                `*Approximate Budget:* ${budget}\n\n` +
                 `Thank you for sharing your details! We will get back to you shortly.`;
 
             const encoded = encodeURIComponent(payload);

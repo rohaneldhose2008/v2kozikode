@@ -1,4 +1,26 @@
 User-agent: *
 Allow: /
 
+# Allow AI Search and LLM Answer Engines (AEO Optimization)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://brownlights.in/sitemap.xml

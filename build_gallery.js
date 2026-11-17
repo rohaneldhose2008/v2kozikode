@@ -73,35 +73,73 @@ const galleryPageHTML = `<!DOCTYPE html>
     <meta name="description" content="Explore luxury wedding photography collections and real wedding stories in Kozhikode (Calicut), Kerala by Brown Lights Media. Candid wedding albums, bridal photos, and Kerala wedding films.">
     <meta name="keywords" content="Calicut Wedding Gallery, Kozhikode Wedding Photography Albums, Kerala Candid Wedding Photos, Muslim Wedding Album Kozhikode, Hindu Marriage Photos Calicut, Destination Wedding Portfolio Kerala">
     <meta name="author" content="Brown Lights Media">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://brownlights.in/gallery">
 
-    <!-- GEO Tags for Kozhikode, Kerala -->
+    <!-- GEO / Local Search Tags for Kozhikode, Kerala -->
     <meta name="geo.region" content="IN-KL">
-    <meta name="geo.placename" content="Kozhikode, Calicut, Kerala">
-    <meta name="geo.position" content="11.2588;75.7804">
-    <meta name="ICBM" content="11.2588, 75.7804">
+    <meta name="geo.placename" content="Kozhikode, Calicut, Kerala, India">
+    <meta name="geo.position" content="11.258776;75.780411">
+    <meta name="ICBM" content="11.258776, 75.780411">
 
-    <!-- OpenGraph Tags -->
+    <!-- OpenGraph Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Brown Lights Media">
-    <meta property="og:title" content="Wedding Photo Gallery – Best Wedding Photographers in Calicut, Kozhikode, Kerala">
+    <meta property="og:title" content="Wedding Photography Gallery | Best Photographers in Calicut, Kozhikode">
     <meta property="og:description" content="Explore luxury wedding photography collections and real wedding stories in Kozhikode (Calicut), Kerala by Brown Lights Media.">
     <meta property="og:url" content="https://brownlights.in/gallery">
     <meta property="og:image" content="https://brownlights.in/assets/images/logo.png">
+    <meta property="og:locale" content="en_IN">
 
-    <!-- Schema.org JSON-LD -->
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wedding Photography Gallery | Best Photographers in Calicut, Kozhikode">
+    <meta name="twitter:description" content="Curated luxury wedding photo collections and real stories in Kozhikode, Kerala.">
+    <meta name="twitter:image" content="https://brownlights.in/assets/images/logo.png">
+
+    <!-- Schema.org JSON-LD (SEO / AEO / GEO Optimization) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ImageGallery",
-      "name": "Brown Lights Media Kozhikode Wedding Photography Gallery",
-      "description": "Real wedding photo collections and albums in Kozhikode (Calicut), Kerala.",
-      "url": "https://brownlights.in/gallery",
-      "author": {
-        "@type": "Organization",
-        "name": "Brown Lights Media",
-        "url": "https://brownlights.in/"
-      }
+      "@graph": [
+        {
+          "@type": "ImageGallery",
+          "@id": "https://brownlights.in/gallery#gallery",
+          "name": "Brown Lights Media Kozhikode Wedding Photography Gallery",
+          "description": "Real wedding photo collections, candid moments, and bridal portraits in Kozhikode (Calicut), Kerala.",
+          "url": "https://brownlights.in/gallery",
+          "author": {
+            "@type": "Organization",
+            "name": "Brown Lights Media",
+            "url": "https://brownlights.in/",
+            "telephone": "+916238484158",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kozhikode",
+              "addressRegion": "Kerala",
+              "addressCountry": "IN"
+            }
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://brownlights.in/gallery#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://brownlights.in/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Gallery",
+              "item": "https://brownlights.in/gallery"
+            }
+          ]
+        }
+      ]
     }
     </script>
     

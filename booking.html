@@ -3,17 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brown Lights Media Booking | Kozhikode Wedding Photography</title>
-    <meta name="description" content="Plan your dream wedding photography and cinematic films with Brown Lights Media Kozhikode. Reserve your date and customize your celebration coverage.">
+    <title>Book Your Wedding Photography | Brown Lights Media Kozhikode</title>
+    <meta name="description" content="Reserve your wedding date and get customized photography and cinematic film packages with Brown Lights Media in Kozhikode (Calicut), Kerala. Instant WhatsApp quotation.">
+    <meta name="keywords" content="Book Wedding Photographer Kozhikode, Calicut Wedding Photography Packages, Reserve Wedding Date Kerala, Brown Lights Media Booking, Kerala Wedding Cinematography Quotation, Candid Wedding Photographers Calicut">
+    <meta name="author" content="Brown Lights Media">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://brownlights.in/booking">
-    <link rel="icon" type="image/png" href="/assets/images/blm logo (1).png">
 
-    <!-- Open Graph / Meta -->
+    <!-- GEO / Local Search Tags for Kozhikode, Kerala -->
+    <meta name="geo.region" content="IN-KL">
+    <meta name="geo.placename" content="Kozhikode, Calicut, Kerala, India">
+    <meta name="geo.position" content="11.258776;75.780411">
+    <meta name="ICBM" content="11.258776, 75.780411">
+
+    <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Brown Lights Media">
     <meta property="og:url" content="https://brownlights.in/booking">
-    <meta property="og:title" content="Brown Lights Media Booking | Kozhikode Wedding Photography">
-    <meta property="og:description" content="Plan your dream wedding photography and cinematic films with Brown Lights Media Kozhikode. Reserve your date and customize your celebration coverage.">
+    <meta property="og:title" content="Book Your Wedding Photography | Brown Lights Media Kozhikode">
+    <meta property="og:description" content="Reserve your date with Kozhikode's premier wedding photography & cinematic film studio. Bespoke celebration coverage across Kerala.">
     <meta property="og:image" content="https://brownlights.in/assets/images/logo.png">
+    <meta property="og:locale" content="en_IN">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Book Your Wedding Photography | Brown Lights Media Kozhikode">
+    <meta name="twitter:description" content="Reserve your wedding date with Brown Lights Media in Kozhikode, Kerala.">
+    <meta name="twitter:image" content="https://brownlights.in/assets/images/logo.png">
+
+    <!-- Schema.org JSON-LD (SEO / AEO / GEO Optimization) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["LocalBusiness", "ProfessionalService", "Photographer"],
+          "@id": "https://brownlights.in/#business",
+          "name": "Brown Lights Media",
+          "url": "https://brownlights.in/",
+          "logo": "https://brownlights.in/assets/images/logo.png",
+          "telephone": "+916238484158",
+          "email": "hello@brownlights.in",
+          "priceRange": "₹₹₹",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Kozhikode City",
+            "addressLocality": "Kozhikode",
+            "addressRegion": "Kerala",
+            "postalCode": "673001",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 11.258776,
+            "longitude": 75.780411
+          },
+          "areaServed": [
+            { "@type": "City", "name": "Kozhikode" },
+            { "@type": "City", "name": "Calicut" },
+            { "@type": "AdministrativeArea", "name": "Kerala" },
+            { "@type": "Country", "name": "India" }
+          ]
+        },
+        {
+          "@type": "ContactPage",
+          "@id": "https://brownlights.in/booking#webpage",
+          "url": "https://brownlights.in/booking",
+          "name": "Book Wedding Photography & Films | Brown Lights Media Kozhikode",
+          "description": "Celebration booking form and date reservation for wedding photography in Kozhikode, Kerala.",
+          "isPartOf": { "@id": "https://brownlights.in/#business" },
+          "potentialAction": {
+            "@type": "ReserveAction",
+            "target": "https://brownlights.in/booking",
+            "result": {
+              "@type": "Reservation",
+              "name": "Wedding Photography Reservation"
+            }
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://brownlights.in/booking#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://brownlights.in/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Booking",
+              "item": "https://brownlights.in/booking"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="icon" type="image/png" href="/assets/images/blm logo (1).png">
 
     <!-- Google Fonts: GFS Didot, Google Sans Flex, Open Sans, Cinzel -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -305,18 +395,18 @@
                     const budget = form.querySelector('input[name="budget_range"]:checked')?.value || 'N/A';
                     const customNotes = document.getElementById('plan-notes')?.value.trim() || 'None';
 
-                    let message = `Hello Brown Lights Media! 🤍 Here are our celebration planning details:\n\n` +
-                        `👤 *Client / Couple:* ${clientName}\n` +
-                        `📱 *WhatsApp:* ${whatsapp}\n` +
-                        `📅 *Celebration Date:* ${weddingDate}\n` +
-                        `👰 *Coverage:* ${coverage}\n` +
-                        `📍 *Programme Venue:* ${venue}\n` +
-                        `👥 *Expected Guests:* ${guestCount}\n` +
-                        `📸 *Extra Lead Photographer:* ${extraPhotographer}\n` +
-                        `🎥 *Services Desired:* ${services}\n` +
-                        `🎞️ *Outputs Wanted:* ${outputs}\n` +
-                        `💰 *Approx. Budget:* ${budget}\n\n` +
-                        `📝 *Special Requests / Notes:*\n${customNotes}\n\n` +
+                    let message = `Hello Brown Lights Media! Here are our celebration booking details:\n\n` +
+                        `*Client / Couple:* ${clientName}\n` +
+                        `*WhatsApp:* ${whatsapp}\n` +
+                        `*Celebration Date:* ${weddingDate}\n` +
+                        `*Coverage:* ${coverage}\n` +
+                        `*Programme Venue:* ${venue}\n` +
+                        `*Expected Guests:* ${guestCount}\n` +
+                        `*Extra Lead Photographer:* ${extraPhotographer}\n` +
+                        `*Services Desired:* ${services}\n` +
+                        `*Outputs Wanted:* ${outputs}\n` +
+                        `*Approx. Budget:* ${budget}\n\n` +
+                        `*Special Requests / Notes:*\n${customNotes}\n\n` +
                         `Looking forward to hearing from your team!`;
 
                     const encoded = encodeURIComponent(message);
