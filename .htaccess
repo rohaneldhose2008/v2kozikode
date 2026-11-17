@@ -11,6 +11,8 @@ RewriteRule ^ / [R=301,L]
 
 # 3. Redirect /planning to /booking
 RewriteRule ^planning/?$ /booking [R=301,L]
+RewriteRule ^little-browns/?$ /littlebrown [R=301,L]
+RewriteRule ^little-ones/?$ /littlebrown [R=301,L]
 
 # 4. Resolve clean URLs to .html files or folder index.html if file does not exist directly
 RewriteCond %{REQUEST_FILENAME} !-f

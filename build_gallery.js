@@ -173,7 +173,7 @@ const galleryPageHTML = `<!DOCTYPE html>
                     <li><a href="/#about" class="nav-link">About</a></li>
                     <li><a href="/#films" class="nav-link">Films</a></li>
                     <li><a href="/gallery" class="nav-link active">Gallery</a></li>
-                    <li><a href="/little-browns" class="nav-link">Little Browns</a></li>
+                    <li><a href="/littlebrown" class="nav-link">LITTLEBROWN</a></li>
                     <li><a href="/#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
